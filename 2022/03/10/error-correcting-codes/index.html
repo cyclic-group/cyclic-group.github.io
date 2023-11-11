@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="0xe598bfe598bfe598bf">
+    <meta name="description" content="0xe598bfe598bfe598bf的次元城">
+    <meta name="author" content="0x88dfac8bedc5">
+    
+    <title>
+        
+            A Tour Through the Theory of Error-Correcting Codes |
+        
+        0x88dfac8bedc5的微型次元城
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/dark-magic-house.png">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"cyclic-group.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/cat-avatar.jpg","favicon":"/images/dark-magic-house.png","avatar":"/images/cat-avatar.jpg","first_screen":{"enable":true,"background_img":"../images/bg.svg","description":"e4 bd a0 e5 a5 bd e5 91 80 e5 98 bf e5 98 bf e5 98 bf ef bd 9e","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQRLNHYY1E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQRLNHYY1E');
+    </script>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/cat-avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               0x88dfac8bedc5的微型次元城
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        A Tour Through the Theory of Error-Correcting Codes
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat-avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">0x88dfac8bedc5</span>
+                                
+                                    <span class="author-label">Lv2</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2022-03-10 00:09:47</span>
+                <span class="mobile">2022-03-10 00:09</span>
+            </span>
+
+            <!-- <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Nov 12 2023 01:23:49 GMT+0800">2023-11-12 01:23:49</span>
+            </span> -->
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/math/">math</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 class="unnumbered" id="mars-pixels-and-code">Mars, Pixels, and
+Code</h1>
+<p>Suppose you are visiting Mars. You want to take some pictures and
+send them to your parents in Earth. To transmit a picture to Earth, it
+must be first divided into small squares called pixels. Each pixel can
+be represented by the degree of blackness in a scale from 0 to 31. These
+pixels are then converted into binary and sent to Earth via some
+electronic device. However, the vast interstellar void of space between
+Mars and Earth may contain stray electromagnetic waves that could
+possibly flip one or several bits in your signals. Assume no more than
+one out of any three consecutive bits will be flipped. How can you
+transmit these pixels?</p>
+<p>One method for this problem is to simply send each bit 5 times.
+Suppose you want to send the pixel 13. Since there are <span
+class="math inline">32 = 2<sup>5</sup></span> distinct pixels, each
+pixel is represented in 5 bits, so the binary representation for 13 is
+01101. Instead of sending 01101, you send <span
+class="math display">0000011111111110000011111.</span></p>
+<p>Your parents would break your message into blocks of length 5, and
+replace each block with the number that occurs most frequently in that
+block. For example, if the 4th, the 7th, and the 10th bits in the signal
+you sent have been flipped, you parent would receive <span
+class="math display">0001010110111110000011111,</span> break it into 5
+blocks of length 5 <span
+class="math display">00010|10110|11111|00000|11111,</span> replace each
+block by the most frequent number <span
+class="math display">00010 → 0, 10110 → 1, 11111 → 1, 00000 → 0, 11111 → 1,</span>
+and finally get the pixel 01101.</p>
+<p>Formally, what we did is using a <strong>code</strong> called the
+5-repetition code. The code is <strong>correct</strong> because the
+error bits can’t dominant any of the blocks. However, whenever you want
+to transmit a pixel (5 bits of information), you need to send <span
+class="math inline">5 × 5 = 25</span> bits. Such cost is nonnegligible
+given that it’s not easy to gain electronic energy in Mars, so we need a
+more <strong>efficient</strong> code! One improvement is using the
+3-repetition code instead, that is, repeating each bit three times.
+Because there is at most one error bit in each block, the improved code
+is still correct. Moreover, this time you will only need to send <span
+class="math inline">3 × 5 = 15</span> bits to transmit a pixel! At this
+moment, you may have an urge to formalize the notions of "code",
+"correctness", and "efficiency".</p>
+<h1 class="unnumbered" id="the-world-of-code">The World of Code</h1>
+<p>Let’s first formalize code and objects associated to code:</p>
+<div class="definition">
+<p><strong>Definition 1</strong> (Alphabet, String, and Language). An
+<strong>alphabet</strong> <span class="math inline"><em>Σ</em></span> is
+simply a finite set of elements called symbols. Any finite sequence over
+<span class="math inline"><em>Σ</em></span> is called a
+<strong>string</strong>. A set of strings is called a
+<strong>language</strong>. If <span
+class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, L is called a
+q-ary language.</p>
+</div>
+<div class="definition">
+<p><strong>Definition 2</strong> (Code). A <strong>code and
+codewords</strong> C of length n is a subset of <span
+class="math inline"><em>Σ</em><sup><em>n</em></sup></span> for some
+alphabet <span class="math inline"><em>Σ</em></span>. If <span
+class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, then C is called
+a q-ary code. Elements of C are called <strong>codewords</strong>.</p>
+</div>
+<div class="definition">
+<p><strong>Definition 3</strong> (Coding Schema). A <strong>coding
+schema</strong> for language L over <span
+class="math inline"><em>Σ</em><sub>1</sub></span> with code C over <span
+class="math inline"><em>Σ</em><sub>2</sub></span> is a bijective map
+<span
+class="math inline"><em>S</em> : <em>Σ</em><sub>1</sub> → <em>C</em></span>.
+We say C encodes L via S. We would omit the coding schema if it is clear
+in the context.</p>
+</div>
+<div class="example">
+<p><strong>Example 1</strong>. The 5-repeated code we discussed earlier
+is a binary code of length 5 consisting of two codewords <span
+class="math inline">{00000, 11111}</span>. We used it to encode a
+language over <span class="math inline">{0, 1}</span> that describes the
+pixels in a picture.</p>
+</div>
+<p>In the following text, we will only present the results for q-ary
+codes because the codes over other alphabets can be easily transformed
+into this class. We now have enough languages to define the efficiency
+of a code:</p>
+<div class="definition">
+<p><strong>Definition 4</strong> (Information Rate). Let C be a q-ary
+code of length n that encodes some language. Its <strong>information
+rate</strong> is defined as follows: <span
+class="math display">$$\frac{\log_q(|C|)}{n}.$$</span></p>
+</div>
+<div class="remark">
+<p><em>Remark 1</em>. Information rate measures the efficiency of a
+q-ary code. The quantity <span class="math inline">|<em>C</em>|</span>
+is exactly the number of symbols used for the language being encoded.
+Representing these symbols in the q-ary number system requires <span
+class="math inline">log<sub><em>q</em></sub>(|<em>C</em>|)</span>
+digits. Thus, the numerator is the number of digits necessary to encode
+a symbol and can be interpreted as the amount of information contained
+in one codeword. It follows that <span
+class="math inline">$\frac{\log_q(|C|)}{n}$</span> captures the average
+amount of information contained in each digit of a codeword. The more
+information each digit contains, the more efficient the code is.</p>
+</div>
+<div class="example">
+<p><strong>Example 2</strong>. The 3-repetition code we discussed
+earlier has information rate <span
+class="math display">$$\frac{\log_2(2)}{3} = \frac{1}{3}$$</span> ,
+while the 5-repetition code has information rate <span
+class="math display">$$\frac{\log_2(2)}{5} = \frac{1}{5}$$</span> , so
+the former is more efficient than the latter.</p>
+</div>
+<p>Unlike efficiency, the "correctness" of a code can’t be expressed by
+one line of formula. This notion can be captured by the error-detection
+and error-correction capacities of the code. But we first need a way to
+measure the distance between two words.<br />
+If we think <span
+class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> as a
+vector space, it is natural to define some geometrics on it:</p>
+<div class="definition">
+<p><strong>Definition 5</strong> (Hamming Distance and Minimum
+Distance). The <strong>Hamming distance</strong> <span
+class="math inline"><em>d</em><sub><em>H</em></sub>(<em>x</em>,<em>y</em>)</span>
+between any two words in <span
+class="math inline"><em>Σ</em><sup><em>n</em></sup></span> is the number
+of positions in which they differ. The <strong>minimum distance</strong>
+of C, denoted by <span class="math inline"><em>d</em>(<em>C</em>)</span>
+is the smallest possible Hamming distanece between any two distinct
+codewords in C.</p>
+</div>
+<p>Now we can formalize the notion of "detection" and "correction":</p>
+<div class="definition">
+<p><strong>Definition 6</strong> (Error-Detection and Error-Correction).
+Let C be a code of length n that encodes some language. Then we say C
+can detect up to <span class="math inline"><em>e</em></span> error
+digits in any word received if there exists an algorithm <span
+class="math inline"><em>ψ</em></span> such that <span
+class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> returns
+true iff <span class="math inline"><em>c</em> ≠ <em>w</em></span>, for
+any <span class="math inline"><em>c</em> ∈ <em>C</em></span> and <span
+class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
+with <span
+class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.
+We say that C can correct up to <span
+class="math inline"><em>e</em></span> error digits in any word received
+if there exists an algorithm <span class="math inline"><em>ϕ</em></span>
+such that <span
+class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> returns
+<span class="math inline"><em>c</em></span>, for any <span
+class="math inline"><em>c</em> ∈ <em>C</em></span> and <span
+class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
+with <span
+class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.</p>
+</div>
+<p>Although we won’t provide a formal definition for the term
+<strong>algorithm</strong>, the readers can assume it refers to the
+deterministic Turing machines or instructions written in any popular
+programming languages. The following theorems show that the minimum
+distance of a code suggests the range in which the code can detect or
+correct the error.</p>
+<div class="theorem">
+<p><strong>Theorem 1</strong>. <em>A code C can detect up to <span
+class="math inline"><em>e</em></span> error digits in any word received
+as long as <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline"><em>c</em></span> be
+the codeword sent and <span class="math inline"><em>w</em></span> be the
+word received. Let <span class="math inline"><em>e</em></span> denote
+the number of error digits in <span
+class="math inline"><em>w</em></span>. Suppose <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>. Then
+we have <span
+class="math inline"><em>d</em><sub><em>H</em></sub>(<em>c</em>,<em>w</em>) = <em>e</em> &lt; <em>e</em> + 1 ≤ <em>d</em>(<em>C</em>)</span>.
+It follows that <span
+class="math inline"><em>w</em> ≠ <em>c</em>′</span> for all <span
+class="math inline"><em>c</em>′ ∈ <em>C</em> − {<em>c</em>}</span>.
+Therefore, <span class="math inline"><em>w</em></span> can’t match any
+codeword if and only if <span
+class="math inline"><em>e</em> &gt; 0</span>. Let <span
+class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> be an
+algorithm that searches C for a match of w. It returns true if no match
+is found, returns false otherwise. Since <span
+class="math inline"><em>e</em> &gt; 0</span> iff no match is found, the
+algorithm returns true iff <span
+class="math inline"><em>w</em> ≠ <em>c</em></span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 2</strong>. <em>A code C can correct up to <span
+class="math inline"><em>e</em></span> error digits in any word received
+as long as <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline"><em>c</em></span> be
+the codeword and <span class="math inline"><em>w</em></span> be the word
+received. Suppose <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>,
+where <span class="math inline"><em>e</em></span> is the number of error
+digits in <span class="math inline"><em>w</em></span>. For any codeword
+<span class="math inline"><em>c</em>′ ≠ <em>c</em></span>, we have <span
+class="math inline"><em>d</em>(<em>c</em>′,<em>w</em>) ≥ <em>d</em>(<em>c</em>′,<em>c</em>) − <em>d</em>(<em>w</em>,<em>c</em>) ≥ <em>d</em>(<em>C</em>) − <em>e</em> ≥ (2<em>e</em>+1) − <em>e</em> = <em>e</em> + 1</span>
+by the triangular inequality. This implies <span
+class="math inline"><em>c</em></span> is the unique closest codeword to
+<span class="math inline"><em>w</em></span>. Let <span
+class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> be the
+algorithm that first computes the distance between <span
+class="math inline"><em>w</em>, <em>c</em></span> for all <span
+class="math inline"><em>c</em> ∈ <em>C</em></span> and then returns the
+codeword that is closest to m. Since <span
+class="math inline"><em>c</em></span> is the closest codeword to <span
+class="math inline"><em>w</em></span>. The algorithm will always return
+<span class="math inline"><em>c</em></span>. ◻</p>
+</div>
+<div class="example">
+<p><strong>Example 3</strong>. We can apply these theorems on the
+k-repetition code, where k is some positive odd number. The minimum
+distance of the code is <span
+class="math inline"><em>d</em>(00...0,11...1) = <em>k</em></span>, which
+suggests that the code can detect up to <span
+class="math inline"><em>k</em> − 1</span> error bits and correct up to
+<span class="math inline">(<em>k</em>−1)/2</span> error bits.</p>
+</div>
+<h1 class="unnumbered" id="a-puzzle">A Puzzle</h1>
+<p>Now we have all the tools (perhaps) to deal with code! It’s time to
+face the suuuuuuuuuper-generalized version of the Mars-Earth
+problem:</p>
+<div class="problem">
+<p><em>Problem 1</em>. Given a base q, a codeword length n, and a bound
+d such that <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>, what is
+the maximum information rate we can obtain? How to construct the code
+that maximizes the information rate?</p>
+</div>
+<p>Since <span class="math inline"><em>q</em>, <em>n</em></span> is
+fixed, maximizing the <span
+class="math inline">$\frac{\log_q(|C|)}{n}$</span> is equivalent to
+maximizing <span class="math inline">|<em>C</em>|</span>, the size of
+the code. Thus, the problem can be reformulated as follows:</p>
+<div class="problem">
+<p><em>Problem 2</em>. Let <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+denote the maximum number of codewords in a q-ary code C of length n
+with minimum distance <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>. What is
+<span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+and how to construct a code of size <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>?</p>
+</div>
+<p>This problem is still open today for tons of choices of <span
+class="math inline"><em>q</em>, <em>n</em>, <em>d</em></span>. However,
+the value of <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+can be determined by adding some constraints on its parameters:</p>
+<div class="theorem">
+<p><strong>Theorem 3</strong>. <em>If <span
+class="math inline"><em>d</em> = 1</span>, then <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em><sup><em>n</em></sup></span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Since the distance between any two different codeword
+is at least 1, setting <span class="math inline"><em>d</em></span> to 1
+is equivalent to removing the constraint on the minimum distance of C.
+Thus, to reach the optimal, we can simply put all elements in <span
+class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> into C.
+As a result, we have <span
+class="math inline">|<em>C</em>| = |(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup>| = <em>q</em><sup><em>n</em></sup></span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 4</strong>. <em>If <span
+class="math inline"><em>n</em> = <em>d</em></span>, then <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let C be the n-repetition code in base q: <span
+class="math display">$$\begin{aligned}
+\left\{\overbrace{000\ldots 0}^{n \textrm{ zeros}}, \overbrace{111\ldots
+1}^{n \textrm{ ones}}, \ldots \overbrace{q-1\ldots q-1}^{n
+(q-1)\textrm{th symbol}} \right\}.
+\end{aligned}$$</span> For any two distinct codewords <span
+class="math inline">$\overbrace{xxx\ldots x}^{n \textrm{
+x's}},\overbrace{yyy\ldots y}^{n \textrm{ y's}}$</span>, their distance
+is <span class="math inline"><em>n</em></span>, so the minimum distance
+of C is <span class="math inline"><em>n</em> = <em>d</em></span>. Hence,
+<span class="math inline">|<em>C</em>| = <em>q</em></span> is a lower
+bound for <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
+Let <span class="math inline"><em>C</em>′</span> be a q-ary code of
+length n with <span
+class="math inline"><em>d</em>(<em>C</em>′) ≥ <em>n</em></span>. Since
+the maximum distance between any two words in <span
+class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> is n,
+<span class="math inline"><em>d</em>(<em>C</em>) ≤ <em>n</em></span> and
+so <span
+class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>. Suppose
+<span class="math inline"><em>C</em>′</span> contains at least <span
+class="math inline"><em>q</em> + 1</span> codewords for contradiction.
+By the pigeonhole hole principle, there must be two codewords x,y in
+<span class="math inline"><em>C</em>′</span> that start with same
+symbol. Since x,y have length n and they start with the same symbol, the
+number of positions in which they differ is at most <span
+class="math inline"><em>n</em> − 1</span>, that is, <span
+class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ <em>n</em> − 1</span>,
+which contradicts that <span
+class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>.
+Therefore, <span class="math inline"><em>C</em>′</span> contains at most
+<span class="math inline"><em>q</em></span> elements and so <span
+class="math inline"><em>q</em></span> is an upper bound for <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
+We have shown that <span
+class="math inline"><em>q</em> ≤ <em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em></span>,
+so that <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>. ◻</p>
+</div>
+<div class="theorem">
+<p><strong>Theorem 5</strong>. <em>If <span
+class="math inline"><em>n</em> = 4, <em>d</em> = 3</span>, then <span
+class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em><sup>2</sup></span>
+with equality if there exists a pair of orthogonal Latin squares of
+order q.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let C be a q-ary code of length 4 with <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ 3</span>. Suppose, for
+contradiction, the size of C is at least <span
+class="math inline"><em>q</em><sup>2</sup> + 1</span>. Since <span
+class="math inline">3 ≤ <em>d</em>(<em>C</em>) ≤ <em>n</em> = 4</span>,
+<span class="math inline"><em>d</em>(<em>C</em>)</span> is either 3 or
+4. If <span class="math inline"><em>d</em>(<em>C</em>) = 4</span>, as
+shown before, its maximum possible size is <span
+class="math inline"><em>q</em> &lt; <em>q</em><sup>2</sup> + 1</span>.
+Thus, <span class="math inline"><em>d</em>(<em>C</em>) = 3</span>. Since
+<span
+class="math inline">|<em>C</em>| ≥ <em>q</em><sup>2</sup> + 1</span>, by
+the pigeonhole principle, there exists two codewords <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>C</em></span> whose
+first two digits are the same, so that <span
+class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ 2 &lt; 3 = <em>d</em>(<em>C</em>)</span>,
+which contradicts that <span
+class="math inline"><em>d</em>(<em>C</em>) ≤ <em>d</em>(<em>x</em>,<em>y</em>)</span>.
+Thus, the size of C is at most <span
+class="math inline"><em>q</em><sup>2</sup></span> and <span
+class="math inline"><em>S</em>(<em>q</em>,4,3) ≤ <em>q</em><sup>2</sup></span>.<br />
+Assume there exists a pair of orthogonal Latin squares <span
+class="math inline"><em>A</em>, <em>B</em></span> of order <span
+class="math inline"><em>q</em></span> over <span
+class="math inline">ℤ/<em>q</em>ℤ</span>. Let <span
+class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub>, <em>b</em><sub><em>i</em><em>j</em></sub></span>
+denote the (i,j)th entry of <span
+class="math inline"><em>A</em>, <em>B</em></span>respectively. We
+construct the code C as follows:</p>
+<p><span
+class="math display"><em>C</em> = {(<em>i</em>,<em>j</em>,<em>a</em><sub><em>i</em><em>j</em></sub>,<em>b</em><sub><em>i</em><em>j</em></sub>) : <em>i</em>, <em>j</em> ∈ ℤ/<em>q</em>ℤ}</span>.</p>
+<p>Pick any two different codewords <span
+class="math inline">(<em>s</em>,<em>t</em>,<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>)</span>
+and <span
+class="math inline">(<em>u</em>,<em>v</em>,<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>,
+we have <span
+class="math inline">(<em>s</em>,<em>t</em>) ≠ (<em>u</em>,<em>v</em>)</span>.
+Since <span class="math inline"><em>A</em>, <em>B</em></span> are
+orthogonal, <span
+class="math inline">(<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>) ≠ (<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>.
+It follows that the minimum distance of C is at least 2. Suppose, for
+contradiction, the minimum distance of C equals 2. Then we have either
+<span
+class="math inline"><em>s</em> = <em>u</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
+or <span
+class="math inline"><em>s</em> = <em>u</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>,
+or <span
+class="math inline"><em>t</em> = <em>v</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
+or <span
+class="math inline"><em>t</em> = <em>v</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>.
+If the first case is true, then <span
+class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
+<span
+class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
+equal and in the same row, which contradicts that A is a Latin square.
+If the second case is true, then <span
+class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
+<span
+class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
+equal and in the same row, which contradicts that B is a Latin square.
+If the third case is true, then <span
+class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
+<span
+class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
+equal and in the same column, which contradicts that A is a Latin
+square. If the last case is true, then <span
+class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
+<span
+class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
+equal and in the same column, which contradicts that B is a Latin
+square. Since all cases lead to contradiction, the minimum distance of C
+is at least 3, that is, <span
+class="math inline"><em>d</em>(<em>C</em>) ≥ 3 = <em>d</em></span>.
+Thus, C satisfies the minimum distance constraint. Because <span
+class="math inline">|<em>C</em>| = <em>q</em><sup>2</sup></span> reaches
+the upper bound for <span
+class="math inline"><em>S</em>(<em>q</em>,4,3)</span>, we conclude that
+<span
+class="math inline"><em>S</em>(<em>q</em>,4,3) = <em>q</em><sup>2</sup></span>. ◻</p>
+</div>
+<p>Although the result of <strong>Theorem 5</strong> is not interesting,
+the proof suggests some deep relationship between codes and Latin
+squares, and it is a good place to finish our tour.</p>
+<h1 class="unnumbered" id="reference">Reference</h1>
+<p>van, L. J. H., &amp;amp; Wilson, R. M. (2001). A course in
+Combinatorics. Cambridge University Press.<br />
+Wikimedia Foundation. (2021, October 10). Code rate. Wikipedia.
+Retrieved March 18, 2022, from
+https://en.wikipedia.org/wiki/Code_rate</p>
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/math/">math</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2022/04/03/overthewire-bandit/"
+                                   title="Overthewire - Bandit"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Overthewire - Bandit</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2021/09/16/cyclic/"
+                                   title="Cyclic - Text Adventure"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Cyclic - Text Adventure</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mars-pixels-and-code"><span class="nav-number">1.</span> <span class="nav-text">Mars, Pixels, and
+Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-world-of-code"><span class="nav-number">2.</span> <span class="nav-text">The World of Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-puzzle"><span class="nav-number">3.</span> <span class="nav-text">A Puzzle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">0x88dfac8bedc5</a>
+                
+            </div>
+
+            <!-- <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div> -->
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mars-pixels-and-code"><span class="nav-number">1.</span> <span class="nav-text">Mars, Pixels, and
+Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-world-of-code"><span class="nav-number">2.</span> <span class="nav-text">The World of Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-puzzle"><span class="nav-number">3.</span> <span class="nav-text">A Puzzle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+<script src="/js/long-press-event.js" defer></script>
+<script defer>
+    const bgm = document.createElement("audio");
+    bgm.id = "bgm";
+    bgm.src = "/audios/bgm-1.mp3";
+    bgm.controls = false;
+    bgm.autoplay = false; 
+    bgm.style.display = "none";
+    bgm.loop = "loop";
+    document.body.appendChild(bgm);
+
+    window.onload = function() {
+        const widget = document.querySelector("#live2d-widget");
+        widget.style.pointerEvents = "auto";
+        widget.style.cursor = "url('/images/clef.png') 20 20, auto";
+        widget.addEventListener("mousedown", () => {
+            const audio_list = ["https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/upclzsolxj/01.%20Praise%20the%20Lamb.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/lbccbknyve/05.%20Faith%20Up.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/biuzbjcrtj/07.%20Saviour.mp3", 
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/rxoopwecuw/08.%20Darkwood.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/mwplkyfcej/10.%20Leshy.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/pyrxysussx/11.%20Knucklebones.mp3",
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/bmshkiptnt/16.%20Heket.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/shfpubazuq/26.%20Shamura.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/cjseknykhh/35.%20The%20One%20Who%20Waits.mp3"];
+            bgm.src = audio_list[Math.floor(Math.random() * 9)];
+            bgm.play();
+            return false;
+        });
+        widget.addEventListener("long-press", () => {
+            bgm.pause();
+            return false;
+        });
+    };
+   
+</script>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"},"log":false});</script></body>
+</html>

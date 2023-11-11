@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="0xe598bfe598bfe598bf">
+    <meta name="description" content="0xe598bfe598bfe598bf的次元城">
+    <meta name="author" content="0x88dfac8bedc5">
+    
+    <title>
+        
+            Market Expansion (Operation Research Project) |
+        
+        0x88dfac8bedc5的微型次元城
+    </title><meta name="robots" content="noindex">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/dark-magic-house.png">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"cyclic-group.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/cat-avatar.jpg","favicon":"/images/dark-magic-house.png","avatar":"/images/cat-avatar.jpg","first_screen":{"enable":true,"background_img":"../images/bg.svg","description":"e4 bd a0 e5 a5 bd e5 91 80 e5 98 bf e5 98 bf e5 98 bf ef bd 9e","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQRLNHYY1E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQRLNHYY1E');
+    </script>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/cat-avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               0x88dfac8bedc5的微型次元城
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        Market Expansion (Operation Research Project)
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat-avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">0x88dfac8bedc5</span>
+                                
+                                    <span class="author-label">Lv2</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2022-06-10 15:10:17</span>
+                <span class="mobile">2022-06-10 15:10</span>
+            </span>
+
+            <!-- <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Thu Nov 09 2023 23:54:55 GMT+0800">2023-11-09 23:54:55</span>
+            </span> -->
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/math/">math</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="introduction">Introduction</h1>
+<p>To expand craft business into markets outside California, the company
+Crafting S.L. needs our team to determine a plan for weekly production
+and sales. The goal of our plan is to maximize the weekly profit from
+selling cloth, yarn, and crafting materials produced by the company. The
+sales price and production resource of each product are summarized by
+the following table:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"> </th>
+<th style="text-align: left;">Price</th>
+<th style="text-align: left;">Cloth</th>
+<th style="text-align: left;">Yarn</th>
+<th style="text-align: left;">Sewing Thread</th>
+<th style="text-align: left;">Craf. Mat.</th>
+<th style="text-align: left;">Labor Hour (min)</th>
+<th style="text-align: left;">Machinery cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cloth</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yarn</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">0.05</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crafting Material</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">0.75</td>
+<td style="text-align: left;">0.12</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">1.5</td>
+</tr>
+</tbody>
+</table>
+<p>As implied by the table, each product can either be sold or be used
+to produce other goods. Since the company doesn’t have a warehouse, it
+needs to buy thread and crafting materials at the start of every week to
+initialize the production. The price of thread is $0.5 per 100 yards,
+and there is no supply limit. To buy crafting materials, the company
+needs to pay $2 per pound due to the payment of interests. Also, the
+supply of crafting materials is limited to 1000 pounds.</p>
+<p>Our plan also needs to take the plant capacities into accounts. The
+maximum weekly labor hours is 2,000. Each week the plant can produce at
+most 5,500 meters of cloth, 3,000 skeins of yarns, and 500 pounds of
+crafting materials.</p>
+<p>In the following section, we would use the information above to
+construct our initial model.</p>
+<h1 id="model">Model</h1>
+<p>For a clear result, we set up two sets of decision variables:</p>
+<ul>
+<li><p><strong>Production</strong></p>
+<ul>
+<li><p><span class="math inline"><em>c</em><sub><em>p</em></sub></span>:
+weekly production of cloth in meters</p></li>
+<li><p><span class="math inline"><em>y</em><sub><em>p</em></sub></span>:
+weekly production of yarn in skeins</p></li>
+<li><p><span class="math inline"><em>m</em><sub><em>p</em></sub></span>:
+weekly production of crafting materials in pounds</p></li>
+</ul></li>
+<li><p><strong>Sales</strong></p>
+<ul>
+<li><p><span class="math inline"><em>c</em><sub><em>s</em></sub></span>:
+weekly sales of cloth in meters</p></li>
+<li><p><span class="math inline"><em>y</em><sub><em>p</em></sub></span>:
+weekly sales of yarn in skeins</p></li>
+<li><p><span class="math inline"><em>m</em><sub><em>p</em></sub></span>:
+weekly sales of crafting materials in pounds</p></li>
+</ul></li>
+</ul>
+<p>. The company’s demand of thread and craft materials can be expressed
+in terms of these decision variables:</p>
+<ul>
+<li><p>thread (yards): <span
+class="math inline">200<em>c</em><sub><em>p</em></sub> + 100<em>y</em><sub><em>p</em></sub></span></p></li>
+<li><p>crafting materials (pounds): <span
+class="math inline">0.1<em>c</em><sub><em>p</em></sub> + 0.05<em>y</em><sub><em>p</em></sub></span></p></li>
+</ul>
+<p>. The total profit is simply the revenue minus material cost and
+machinery cost:</p>
+<p><span
+class="math display">(30<em>c</em><sub><em>s</em></sub>+9<em>y</em><sub><em>s</em></sub>+25<em>m</em><sub><em>s</em></sub>) − 0.005(200<em>c</em><sub><em>p</em></sub>+100<em>y</em><sub><em>p</em></sub>) − (25+2)(0.1<em>c</em><sub><em>p</em></sub>+0.05<em>y</em><sub><em>p</em></sub>) − (4<em>c</em><sub><em>p</em></sub>+2.5<em>c</em><sub><em>p</em></sub>+1.5<em>c</em><sub><em>p</em></sub>)</span>
+. The labor-hour constraints and production capacity constraints are
+associated to production variables:</p>
+<p><span class="math display">$$30c_p + 5c_p + 50m_p \leq 120,000 \\
+    c_p \leq 5,500 \\
+    y_p \leq 3,000 \\
+    m_p \leq 500$$</span> . Moreover, the production of each product
+should be enough for sales and secondary production:</p>
+<p><span class="math display">$$c_p - c_s - 0.12m_p \geq 0 \\
+    y_p - y_s - (c_p + 0.75m_p) \geq 0 \\
+    m_p - m_s \geq 0$$</span> . Finally, the crafting materials supply
+is limited:</p>
+<p><span
+class="math display">0.1<em>c</em><sub><em>p</em></sub> + 0.05<em>y</em><sub><em>p</em></sub> ≤ 1000</span>
+. By integrating all the pieces together, we can formulate the problem
+as follows:</p>
+<p><span class="math display">$$\begin{aligned}
+\min \quad &amp; 30c_s + 9y_s + 25m_s - 7.7c_p - 4.35y_p - 1.5m_p \\
+\textrm{s.t.} \quad &amp; 30c_p + 5c_p + 50m_p \leq 120,000 \\
+&amp; c_p \leq 5,500 \\
+&amp; y_p \leq 3,000 \\
+&amp; m_p \leq 500 \\
+&amp; c_p - c_s - 0.12m_p \geq 0 \\
+&amp; y_p - y_s - (c_p + 0.75m_p) \geq 0 \\
+&amp; m_p - m_s \geq 0 \\
+&amp; 0.1c_p + 0.05y_p \leq 1000 \\
+&amp; c_s,y_s,m_s,c_p,y_p,m_p \geq 0
+\end{aligned}$$</span> . We choose to apply Linear Programming for this
+model because it meets the 4 assumptions for LP models:</p>
+<ul>
+<li><p><strong>Proportionality</strong>: selling one unit of some
+product will increase the profit by some constant (price) associated to
+that product, while producing one unit of some product will decrease the
+profit by another constant (total cost) associated to that product.
+Since all prices and costs stay consistent regardless of the sales and
+production, this assumption holds for the objective function. For the
+hours and capacity constraints, producing one unit of some product has
+constant contribution to the labor hours, production loads, and the
+demand to crafting materials. In addition, when using a product to
+produce another product, the demand to the resource product is always
+proportional to the production of the final product. Thus, the
+assumption also holds for the three consumption constraints.</p></li>
+<li><p><strong>Additivity</strong>: our model divides the effect of a
+product into the effect of its sales and the effect of its production.
+Since sales and production are two different processes, the effect of a
+product can be viewed as the algebraic sum of the sales effect and the
+production effect. Moreover, the three products have independent prices,
+costs, and consumption, so the total effect can be represented by the
+algebraic sum of the product effects. Thus, the assumption
+holds.</p></li>
+<li><p><strong>Divisibility</strong>: the quantities of cloth, yarn, and
+crafting materials are fractional numbers by their natures, so this
+assumption holds automatically.</p></li>
+<li><p><strong>Certainty</strong>: the price, consumption, and capacity
+data are provided by the company. These data can be measured in detail
+by the company, so we can assume they are correct and precise. Although
+the machinery cost can’t be perfectly estimated, we can assume these
+data represents the average cost in the long run.</p></li>
+</ul>
+<h1 id="solution-and-discussion-of-different-scenarios">Solution and
+discussion of different scenarios</h1>
+<p>The problem is solved by Lingo software. The software reports are
+presented in the last section. We will use the two reports to determine
+the production plan and discuss a number of potential actions can be
+implemented by the company.</p>
+<p>According to the solution report shown in figure one, the optimal
+combination consists of producing 2625 meters of cloth, 3000 stains of
+yarns, and 500 pounds of crafting materials. It suggests to sell 2565
+meters of the cloth and all the crafting materials. If the company
+follows this schedule, it will obtain $55437.50 in profit every
+week.</p>
+<p>In the following subsections, we would discuss certain actions the
+company can implement in different scenarios to affect its profit. We
+will summarize our recommendations in the next section.</p>
+<h2 id="increasing-price-of-yarn">Increasing price of yarn</h2>
+<p>An increase in the demand of yarn reported by the marketing
+department may raise the yarn sales price. According to our sensitivity
+report, a small increase in the yarn price would affect the optimal
+sales and production plan. Therefore, we can still use all yarns to
+produce other goods, and the profit won’t be affected.</p>
+<p>Although a small increase in the yarn price won’t affect our plan,
+the sensitivity report shows if the increase is more than $13.3, it
+would be profitable to sell yarn. The reason is that, the reduced cost
+of selling one stain of yarn is $13.3. If its price is increased by more
+than $13.3, the reduced cost would become negative, which implies
+selling one stain of yarn now has positive effect on the profit.
+Therefore, if the fluctuation of yarn price is small, we don’t recommend
+to put it on the market.</p>
+<h2 id="selling-yarn-to-a-good-client">Selling yarn to a good
+client</h2>
+<p>As discussed above, it is not profitable to sell yarn. However, we
+are presented with the possibility that a good client of the company may
+ask it to sell 100 skeins of yarn with the price $11.50/unit. Under the
+new price, the reduced cost of selling one unit of yarn would be <span
+class="math inline">$13.30 − $2.50 = $10.80</span>, which means selling
+one unit of yarn would decrease the profit by <span
+class="math inline">$10.80</span>. Thus, if the request is being
+accepted, the company will lose $1,080.</p>
+<h2 id="identify-new-product">Identify new product</h2>
+<p>If the company wants to introduce other products to production, we
+suggest to consider those that use yarn as sparingly as possible. As
+shown by the solution report, the dual price of one unit of yarn is
+$17.95, which is significantly higher than the dual prices of other
+resources. Thus, we should avoid using yarn for new product.</p>
+<h2 id="price-of-cloth-bags">Price of cloth bags</h2>
+<p>Now the production of cloth bags is proposed by the marketing office.
+The company needs to determine the sales price of the bags. We already
+knew that producing one bag consumes 15 minutes of labor, 0.3 meters of
+cloth, and 0.01 pounds of crafting materials. Since the dual price for
+the labor hour constraint is 0, the cost of labor hour can be ignored,
+so that we only need to consider the cost of cloth and crafting
+materials. Given the price of cloth and crafting materials, the total
+loss can be expressed as follows: <span
+class="math display">$30 * 0.3 + $27 * 0.03 = $9.27</span> . Therefore,
+to make it profitable, the price of one bag should be greater than
+$9.27.</p>
+<h2 id="expanding-production-capacity">Expanding production
+capacity</h2>
+<p>The company may have a $5,000 investment can be spent on expanding
+production capacity. Suppose this investment will allow to increase 50
+meters of cloth production, or 30 stains of yarn production, or 40
+pounds of crafting materials production each week. We recommend to
+increase the yarn production capacity. According to the solution report,
+the dual prices associated with the cloth, horn, and crafting materials
+production capacities are $0.00, $17.95, and $3.175 respectively. This
+statistic represents the marginal worth of one unit of the related
+capacity increase. The sensitivity report also guarantees that these
+marginal worth remain constant under the change by the investment. Thus,
+investing on the yarn production capacity can maximize the profit.</p>
+<h2 id="increasing-price-of-thread">Increasing price of thread</h2>
+<p>The marketing department also noticed a $0.4 increase in the price of
+thread for producing cloth. The effect of this increase to our objective
+function is <span
+class="math inline"> − 0.8<em>c</em><sub><em>p</em></sub></span>.
+According to the sensitivity report, a decrease of 0.8 to the
+coefficient of cloth production can be tolerated by the current
+solution, so there is no need to change our plan. Since the optimal mix
+is unchanged, the effect of this increase to the profit is simply <span
+class="math inline"> − $0.8 * 2625 = $2100</span>. In other words, this
+would make the company lose $2,100 each week.</p>
+<h2 id="warehouse-renting">Warehouse renting</h2>
+<p>The company has a choice to rent a small warehouse provided by a
+friend of the CEO for $300/week. The warehouse can store 500 stains of
+yarn to prevent problems in the chain supply. If we rent the warehouse,
+we need to produce 500 stains of yarn for stockpiling, so the yarn
+consumption constraint would become</p>
+<p><span
+class="math display"><em>y</em><sub><em>p</em></sub> − <em>y</em><sub><em>s</em></sub> − <em>c</em><sub><em>p</em></sub> − 0.75<em>m</em><sub><em>p</em></sub> ≥ 500</span></p>
+<p>. According to the solution report, the dual price associated to the
+constraint is -$22.3. The sensitivity report also suggests this dual
+price remains constant when the RHS is increased by 500. Thus, keeping
+500 stains of yarn would decrease the profit by <span
+class="math inline">$22.3 * 500 = $11, 150</span>. Combined with the
+cost of the warehouse, the effect on the net profit would be <span
+class="math inline"> − $11, 450</span>.</p>
+<h2 id="inventories">Inventories</h2>
+<p>With the warehouse, we need to find a way to modify our model such
+that it can simulate existing inventories and desired inventories.
+Suppose we want the existing inventories and the desired inventories of
+yarn to be A,B respectively. It follows that the plant needs to produce
+<span class="math inline"><em>B</em> − <em>A</em></span> stains of yarn
+for stockpiling (when B - A is positive), or it can use an extra <span
+class="math inline"><em>A</em> − <em>B</em></span> stains of existing
+yarn for sales or production. In either case, the yarn consumption
+constraint would become <span
+class="math display"><em>y</em><sub><em>p</em></sub> − <em>y</em><sub><em>s</em></sub> − <em>c</em><sub><em>p</em></sub> − 0.75<em>m</em><sub><em>p</em></sub> ≥ <em>B</em> − <em>A</em></span></p>
+<p>. What we did is placing <span
+class="math inline"><em>B</em> − <em>A</em></span> to the RHS of the
+inequality. This method also applies for cloth and crafting materials.
+As long as <span class="math inline"><em>B</em> − <em>A</em></span> is
+tolerated by the current basis, the effect of this requirement to the
+profit would be <span class="math inline"><em>B</em> − <em>A</em></span>
+times the dual price associated to the modified constraint.</p>
+<h1 id="recommendations">Recommendations</h1>
+<p>This section will summarize the potential actions we recommend the
+company to implement based on the previous section.</p>
+<p>For small fluctuation in the sales price of yarn, we recommend not to
+change the current plan because using yarn to produce other goods is
+more profitable than selling it. For the same reason, we suggest not to
+sell large number of yarn to our clients.</p>
+<p>If the company needs to introduce new products into production, we
+recommend to choose the products that use yarn as sparingly as possible
+because the opportunity cost of yarn is expensive. If the company wants
+to sell cloth bags, we recommend to price it more than <span
+class="math inline">$9.27</span>.</p>
+<p>Due to the high dual price of yarn production, we recommend to invest
+on the production capacity of yarn.</p>
+<h1 id="computer-reports">Computer Reports</h1>
+<p>This section presents the two report generated by the Lingo software
+after running on our model.</p>
+<figure>
+<img src="/images/solution.png" id="fig:solution" alt="Solution report" />
+<figcaption aria-hidden="true">Solution report</figcaption>
+</figure>
+<figure>
+<img src="/images/range.png" id="fig:range" alt="Range report" />
+<figcaption aria-hidden="true">Range report</figcaption>
+</figure><!-- flag of hidden posts -->
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/math/">math</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#solution-and-discussion-of-different-scenarios"><span class="nav-number">3.</span> <span class="nav-text">Solution and
+discussion of different scenarios</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#increasing-price-of-yarn"><span class="nav-number">3.1.</span> <span class="nav-text">Increasing price of yarn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selling-yarn-to-a-good-client"><span class="nav-number">3.2.</span> <span class="nav-text">Selling yarn to a good
+client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#identify-new-product"><span class="nav-number">3.3.</span> <span class="nav-text">Identify new product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#price-of-cloth-bags"><span class="nav-number">3.4.</span> <span class="nav-text">Price of cloth bags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#expanding-production-capacity"><span class="nav-number">3.5.</span> <span class="nav-text">Expanding production
+capacity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increasing-price-of-thread"><span class="nav-number">3.6.</span> <span class="nav-text">Increasing price of thread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#warehouse-renting"><span class="nav-number">3.7.</span> <span class="nav-text">Warehouse renting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inventories"><span class="nav-number">3.8.</span> <span class="nav-text">Inventories</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#recommendations"><span class="nav-number">4.</span> <span class="nav-text">Recommendations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#computer-reports"><span class="nav-number">5.</span> <span class="nav-text">Computer Reports</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">0x88dfac8bedc5</a>
+                
+            </div>
+
+            <!-- <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div> -->
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#solution-and-discussion-of-different-scenarios"><span class="nav-number">3.</span> <span class="nav-text">Solution and
+discussion of different scenarios</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#increasing-price-of-yarn"><span class="nav-number">3.1.</span> <span class="nav-text">Increasing price of yarn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selling-yarn-to-a-good-client"><span class="nav-number">3.2.</span> <span class="nav-text">Selling yarn to a good
+client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#identify-new-product"><span class="nav-number">3.3.</span> <span class="nav-text">Identify new product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#price-of-cloth-bags"><span class="nav-number">3.4.</span> <span class="nav-text">Price of cloth bags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#expanding-production-capacity"><span class="nav-number">3.5.</span> <span class="nav-text">Expanding production
+capacity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increasing-price-of-thread"><span class="nav-number">3.6.</span> <span class="nav-text">Increasing price of thread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#warehouse-renting"><span class="nav-number">3.7.</span> <span class="nav-text">Warehouse renting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inventories"><span class="nav-number">3.8.</span> <span class="nav-text">Inventories</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#recommendations"><span class="nav-number">4.</span> <span class="nav-text">Recommendations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#computer-reports"><span class="nav-number">5.</span> <span class="nav-text">Computer Reports</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+<script src="/js/long-press-event.js" defer></script>
+<script defer>
+    const bgm = document.createElement("audio");
+    bgm.id = "bgm";
+    bgm.src = "/audios/bgm-1.mp3";
+    bgm.controls = false;
+    bgm.autoplay = false; 
+    bgm.style.display = "none";
+    bgm.loop = "loop";
+    document.body.appendChild(bgm);
+
+    window.onload = function() {
+        const widget = document.querySelector("#live2d-widget");
+        widget.style.pointerEvents = "auto";
+        widget.style.cursor = "url('/images/clef.png') 20 20, auto";
+        widget.addEventListener("mousedown", () => {
+            const audio_list = ["https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/upclzsolxj/01.%20Praise%20the%20Lamb.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/lbccbknyve/05.%20Faith%20Up.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/biuzbjcrtj/07.%20Saviour.mp3", 
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/rxoopwecuw/08.%20Darkwood.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/mwplkyfcej/10.%20Leshy.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/pyrxysussx/11.%20Knucklebones.mp3",
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/bmshkiptnt/16.%20Heket.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/shfpubazuq/26.%20Shamura.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/cjseknykhh/35.%20The%20One%20Who%20Waits.mp3"];
+            bgm.src = audio_list[Math.floor(Math.random() * 9)];
+            bgm.play();
+            return false;
+        });
+        widget.addEventListener("long-press", () => {
+            bgm.pause();
+            return false;
+        });
+    };
+   
+</script>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"},"log":false});</script></body>
+</html>
