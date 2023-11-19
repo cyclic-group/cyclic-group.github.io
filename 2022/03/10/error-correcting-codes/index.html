@@ -34,7 +34,119 @@
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
     
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
 </head>
 
 
@@ -205,7 +317,7 @@
 
             <!-- <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 12 2023 01:23:49 GMT+0800">2023-11-12 01:23:49</span>
+                <span class="pc" data-updated="Wed Nov 15 2023 19:09:06 GMT+0800">2023-11-15 19:09:06</span>
             </span> -->
         
 
@@ -253,32 +365,25 @@ possibly flip one or several bits in your signals. Assume no more than
 one out of any three consecutive bits will be flipped. How can you
 transmit these pixels?</p>
 <p>One method for this problem is to simply send each bit 5 times.
-Suppose you want to send the pixel 13. Since there are <span
-class="math inline">32 = 2<sup>5</sup></span> distinct pixels, each
+Suppose you want to send the pixel 13. Since there are <span class="math inline">32 = 2<sup>5</sup></span> distinct pixels, each
 pixel is represented in 5 bits, so the binary representation for 13 is
-01101. Instead of sending 01101, you send <span
-class="math display">0000011111111110000011111.</span></p>
+01101. Instead of sending 01101, you send <span class="math display">0000011111111110000011111.</span></p>
 <p>Your parents would break your message into blocks of length 5, and
 replace each block with the number that occurs most frequently in that
 block. For example, if the 4th, the 7th, and the 10th bits in the signal
-you sent have been flipped, you parent would receive <span
-class="math display">0001010110111110000011111,</span> break it into 5
-blocks of length 5 <span
-class="math display">00010|10110|11111|00000|11111,</span> replace each
-block by the most frequent number <span
-class="math display">00010 → 0, 10110 → 1, 11111 → 1, 00000 → 0, 11111 → 1,</span>
+you sent have been flipped, you parent would receive <span class="math display">0001010110111110000011111,</span> break it into 5
+blocks of length 5 <span class="math display">00010|10110|11111|00000|11111,</span> replace each
+block by the most frequent number <span class="math display">00010 → 0, 10110 → 1, 11111 → 1, 00000 → 0, 11111 → 1,</span>
 and finally get the pixel 01101.</p>
 <p>Formally, what we did is using a <strong>code</strong> called the
 5-repetition code. The code is <strong>correct</strong> because the
 error bits can’t dominant any of the blocks. However, whenever you want
-to transmit a pixel (5 bits of information), you need to send <span
-class="math inline">5 × 5 = 25</span> bits. Such cost is nonnegligible
+to transmit a pixel (5 bits of information), you need to send <span class="math inline">5 × 5 = 25</span> bits. Such cost is nonnegligible
 given that it’s not easy to gain electronic energy in Mars, so we need a
 more <strong>efficient</strong> code! One improvement is using the
 3-repetition code instead, that is, repeating each bit three times.
 Because there is at most one error bit in each block, the improved code
-is still correct. Moreover, this time you will only need to send <span
-class="math inline">3 × 5 = 15</span> bits to transmit a pixel! At this
+is still correct. Moreover, this time you will only need to send <span class="math inline">3 × 5 = 15</span> bits to transmit a pixel! At this
 moment, you may have an urge to formalize the notions of "code",
 "correctness", and "efficiency".</p>
 <h1 class="unnumbered" id="the-world-of-code">The World of Code</h1>
@@ -289,32 +394,25 @@ moment, you may have an urge to formalize the notions of "code",
 simply a finite set of elements called symbols. Any finite sequence over
 <span class="math inline"><em>Σ</em></span> is called a
 <strong>string</strong>. A set of strings is called a
-<strong>language</strong>. If <span
-class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, L is called a
+<strong>language</strong>. If <span class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, L is called a
 q-ary language.</p>
 </div>
 <div class="definition">
 <p><strong>Definition 2</strong> (Code). A <strong>code and
-codewords</strong> C of length n is a subset of <span
-class="math inline"><em>Σ</em><sup><em>n</em></sup></span> for some
-alphabet <span class="math inline"><em>Σ</em></span>. If <span
-class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, then C is called
+codewords</strong> C of length n is a subset of <span class="math inline"><em>Σ</em><sup><em>n</em></sup></span> for some
+alphabet <span class="math inline"><em>Σ</em></span>. If <span class="math inline"><em>Σ</em> = ℤ/<em>q</em>ℤ</span>, then C is called
 a q-ary code. Elements of C are called <strong>codewords</strong>.</p>
 </div>
 <div class="definition">
 <p><strong>Definition 3</strong> (Coding Schema). A <strong>coding
-schema</strong> for language L over <span
-class="math inline"><em>Σ</em><sub>1</sub></span> with code C over <span
-class="math inline"><em>Σ</em><sub>2</sub></span> is a bijective map
-<span
-class="math inline"><em>S</em> : <em>Σ</em><sub>1</sub> → <em>C</em></span>.
+schema</strong> for language L over <span class="math inline"><em>Σ</em><sub>1</sub></span> with code C over <span class="math inline"><em>Σ</em><sub>2</sub></span> is a bijective map
+<span class="math inline"><em>S</em> : <em>Σ</em><sub>1</sub> → <em>C</em></span>.
 We say C encodes L via S. We would omit the coding schema if it is clear
 in the context.</p>
 </div>
 <div class="example">
 <p><strong>Example 1</strong>. The 5-repeated code we discussed earlier
-is a binary code of length 5 consisting of two codewords <span
-class="math inline">{00000, 11111}</span>. We used it to encode a
+is a binary code of length 5 consisting of two codewords <span class="math inline">{00000, 11111}</span>. We used it to encode a
 language over <span class="math inline">{0, 1}</span> that describes the
 pixels in a picture.</p>
 </div>
@@ -325,43 +423,35 @@ of a code:</p>
 <div class="definition">
 <p><strong>Definition 4</strong> (Information Rate). Let C be a q-ary
 code of length n that encodes some language. Its <strong>information
-rate</strong> is defined as follows: <span
-class="math display">$$\frac{\log_q(|C|)}{n}.$$</span></p>
+rate</strong> is defined as follows: <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.577ex;" xmlns="http://www.w3.org/2000/svg" width="10.177ex" height="5.171ex" role="img" focusable="false" viewBox="0 -1588.5 4498.3 2285.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,838.5)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mi" transform="translate(1311,-241.4) scale(0.707)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mo" transform="translate(2075.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mi" transform="translate(2353.3,0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g><g data-mml-node="mo" transform="translate(3113.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mo" transform="translate(3391.3,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mi" transform="translate(1810.1,-686)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><rect width="3980.3" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(4220.3,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g></g></g></svg></mjx-container></span></p>
 </div>
 <div class="remark">
 <p><em>Remark 1</em>. Information rate measures the efficiency of a
 q-ary code. The quantity <span class="math inline">|<em>C</em>|</span>
 is exactly the number of symbols used for the language being encoded.
-Representing these symbols in the q-ary number system requires <span
-class="math inline">log<sub><em>q</em></sub>(|<em>C</em>|)</span>
+Representing these symbols in the q-ary number system requires <span class="math inline">log<sub><em>q</em></sub>(|<em>C</em>|)</span>
 digits. Thus, the numerator is the number of digits necessary to encode
 a symbol and can be interpreted as the amount of information contained
-in one codeword. It follows that <span
-class="math inline">$\frac{\log_q(|C|)}{n}$</span> captures the average
+in one codeword. It follows that <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="7.043ex" height="3.373ex" role="img" focusable="false" viewBox="0 -1138 3113.1 1490.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,607.7) scale(0.707)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mi" transform="translate(1311,-241.4) scale(0.707)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mo" transform="translate(2075.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mi" transform="translate(2353.3,0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g><g data-mml-node="mo" transform="translate(3113.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mo" transform="translate(3391.3,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mi" transform="translate(1344.4,-345) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><rect width="2873.1" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span> captures the average
 amount of information contained in each digit of a codeword. The more
 information each digit contains, the more efficient the code is.</p>
 </div>
 <div class="example">
 <p><strong>Example 2</strong>. The 3-repetition code we discussed
-earlier has information rate <span
-class="math display">$$\frac{\log_2(2)}{3} = \frac{1}{3}$$</span> ,
-while the 5-repetition code has information rate <span
-class="math display">$$\frac{\log_2(2)}{5} = \frac{1}{5}$$</span> , so
+earlier has information rate <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="12.91ex" height="4.905ex" role="img" focusable="false" viewBox="0 -1460 5706.1 2168"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,710)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mn" transform="translate(1311,-241.4) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(1714.6,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mo" transform="translate(1714.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(2103.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(2603.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mn" transform="translate(1466.3,-686)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g><rect width="3192.6" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(3710.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(4766.1,0)"><g data-mml-node="mn" transform="translate(220,676)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mn" transform="translate(220,-686)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g><rect width="700" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span> ,
+while the 5-repetition code has information rate <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -1.602ex;" xmlns="http://www.w3.org/2000/svg" width="12.91ex" height="4.905ex" role="img" focusable="false" viewBox="0 -1460 5706.1 2168"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,710)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mn" transform="translate(1311,-241.4) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(1714.6,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mo" transform="translate(1714.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(2103.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(2603.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mn" transform="translate(1466.3,-686)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></g><rect width="3192.6" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(3710.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mfrac" transform="translate(4766.1,0)"><g data-mml-node="mn" transform="translate(220,676)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mn" transform="translate(220,-686)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></g><rect width="700" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span> , so
 the former is more efficient than the latter.</p>
 </div>
 <p>Unlike efficiency, the "correctness" of a code can’t be expressed by
 one line of formula. This notion can be captured by the error-detection
 and error-correction capacities of the code. But we first need a way to
-measure the distance between two words.<br />
-If we think <span
-class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> as a
+measure the distance between two words.<br>
+If we think <span class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> as a
 vector space, it is natural to define some geometrics on it:</p>
 <div class="definition">
 <p><strong>Definition 5</strong> (Hamming Distance and Minimum
-Distance). The <strong>Hamming distance</strong> <span
-class="math inline"><em>d</em><sub><em>H</em></sub>(<em>x</em>,<em>y</em>)</span>
-between any two words in <span
-class="math inline"><em>Σ</em><sup><em>n</em></sup></span> is the number
+Distance). The <strong>Hamming distance</strong> <span class="math inline"><em>d</em><sub><em>H</em></sub>(<em>x</em>,<em>y</em>)</span>
+between any two words in <span class="math inline"><em>Σ</em><sup><em>n</em></sup></span> is the number
 of positions in which they differ. The <strong>minimum distance</strong>
 of C, denoted by <span class="math inline"><em>d</em>(<em>C</em>)</span>
 is the smallest possible Hamming distanece between any two distinct
@@ -372,24 +462,15 @@ codewords in C.</p>
 <p><strong>Definition 6</strong> (Error-Detection and Error-Correction).
 Let C be a code of length n that encodes some language. Then we say C
 can detect up to <span class="math inline"><em>e</em></span> error
-digits in any word received if there exists an algorithm <span
-class="math inline"><em>ψ</em></span> such that <span
-class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> returns
+digits in any word received if there exists an algorithm <span class="math inline"><em>ψ</em></span> such that <span class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> returns
 true iff <span class="math inline"><em>c</em> ≠ <em>w</em></span>, for
-any <span class="math inline"><em>c</em> ∈ <em>C</em></span> and <span
-class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
-with <span
-class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.
-We say that C can correct up to <span
-class="math inline"><em>e</em></span> error digits in any word received
+any <span class="math inline"><em>c</em> ∈ <em>C</em></span> and <span class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
+with <span class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.
+We say that C can correct up to <span class="math inline"><em>e</em></span> error digits in any word received
 if there exists an algorithm <span class="math inline"><em>ϕ</em></span>
-such that <span
-class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> returns
-<span class="math inline"><em>c</em></span>, for any <span
-class="math inline"><em>c</em> ∈ <em>C</em></span> and <span
-class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
-with <span
-class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.</p>
+such that <span class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> returns
+<span class="math inline"><em>c</em></span>, for any <span class="math inline"><em>c</em> ∈ <em>C</em></span> and <span class="math inline"><em>w</em> ∈ <em>Σ</em><sup><em>n</em></sup></span>
+with <span class="math inline"><em>d</em>(<em>c</em>,<em>w</em>) ≤ <em>e</em></span>.</p>
 </div>
 <p>Although we won’t provide a formal definition for the term
 <strong>algorithm</strong>, the readers can assume it refers to the
@@ -398,67 +479,44 @@ programming languages. The following theorems show that the minimum
 distance of a code suggests the range in which the code can detect or
 correct the error.</p>
 <div class="theorem">
-<p><strong>Theorem 1</strong>. <em>A code C can detect up to <span
-class="math inline"><em>e</em></span> error digits in any word received
-as long as <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>.</em></p>
+<p><strong>Theorem 1</strong>. <em>A code C can detect up to <span class="math inline"><em>e</em></span> error digits in any word received
+as long as <span class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> Let <span class="math inline"><em>c</em></span> be
 the codeword sent and <span class="math inline"><em>w</em></span> be the
 word received. Let <span class="math inline"><em>e</em></span> denote
-the number of error digits in <span
-class="math inline"><em>w</em></span>. Suppose <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>. Then
-we have <span
-class="math inline"><em>d</em><sub><em>H</em></sub>(<em>c</em>,<em>w</em>) = <em>e</em> &lt; <em>e</em> + 1 ≤ <em>d</em>(<em>C</em>)</span>.
-It follows that <span
-class="math inline"><em>w</em> ≠ <em>c</em>′</span> for all <span
-class="math inline"><em>c</em>′ ∈ <em>C</em> − {<em>c</em>}</span>.
+the number of error digits in <span class="math inline"><em>w</em></span>. Suppose <span class="math inline"><em>d</em>(<em>C</em>) ≥ <em>e</em> + 1</span>. Then
+we have <span class="math inline"><em>d</em><sub><em>H</em></sub>(<em>c</em>,<em>w</em>) = <em>e</em> &lt; <em>e</em> + 1 ≤ <em>d</em>(<em>C</em>)</span>.
+It follows that <span class="math inline"><em>w</em> ≠ <em>c</em>′</span> for all <span class="math inline"><em>c</em>′ ∈ <em>C</em> − {<em>c</em>}</span>.
 Therefore, <span class="math inline"><em>w</em></span> can’t match any
-codeword if and only if <span
-class="math inline"><em>e</em> &gt; 0</span>. Let <span
-class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> be an
+codeword if and only if <span class="math inline"><em>e</em> &gt; 0</span>. Let <span class="math inline"><em>ψ</em>(<em>w</em>,<em>C</em>)</span> be an
 algorithm that searches C for a match of w. It returns true if no match
-is found, returns false otherwise. Since <span
-class="math inline"><em>e</em> &gt; 0</span> iff no match is found, the
-algorithm returns true iff <span
-class="math inline"><em>w</em> ≠ <em>c</em></span>. ◻</p>
+is found, returns false otherwise. Since <span class="math inline"><em>e</em> &gt; 0</span> iff no match is found, the
+algorithm returns true iff <span class="math inline"><em>w</em> ≠ <em>c</em></span>. ◻</p>
 </div>
 <div class="theorem">
-<p><strong>Theorem 2</strong>. <em>A code C can correct up to <span
-class="math inline"><em>e</em></span> error digits in any word received
-as long as <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>.</em></p>
+<p><strong>Theorem 2</strong>. <em>A code C can correct up to <span class="math inline"><em>e</em></span> error digits in any word received
+as long as <span class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> Let <span class="math inline"><em>c</em></span> be
 the codeword and <span class="math inline"><em>w</em></span> be the word
-received. Suppose <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>,
+received. Suppose <span class="math inline"><em>d</em>(<em>C</em>) ≥ 2<em>e</em> + 1</span>,
 where <span class="math inline"><em>e</em></span> is the number of error
 digits in <span class="math inline"><em>w</em></span>. For any codeword
-<span class="math inline"><em>c</em>′ ≠ <em>c</em></span>, we have <span
-class="math inline"><em>d</em>(<em>c</em>′,<em>w</em>) ≥ <em>d</em>(<em>c</em>′,<em>c</em>) − <em>d</em>(<em>w</em>,<em>c</em>) ≥ <em>d</em>(<em>C</em>) − <em>e</em> ≥ (2<em>e</em>+1) − <em>e</em> = <em>e</em> + 1</span>
-by the triangular inequality. This implies <span
-class="math inline"><em>c</em></span> is the unique closest codeword to
-<span class="math inline"><em>w</em></span>. Let <span
-class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> be the
-algorithm that first computes the distance between <span
-class="math inline"><em>w</em>, <em>c</em></span> for all <span
-class="math inline"><em>c</em> ∈ <em>C</em></span> and then returns the
-codeword that is closest to m. Since <span
-class="math inline"><em>c</em></span> is the closest codeword to <span
-class="math inline"><em>w</em></span>. The algorithm will always return
+<span class="math inline"><em>c</em>′ ≠ <em>c</em></span>, we have <span class="math inline"><em>d</em>(<em>c</em>′,<em>w</em>) ≥ <em>d</em>(<em>c</em>′,<em>c</em>) − <em>d</em>(<em>w</em>,<em>c</em>) ≥ <em>d</em>(<em>C</em>) − <em>e</em> ≥ (2<em>e</em>+1) − <em>e</em> = <em>e</em> + 1</span>
+by the triangular inequality. This implies <span class="math inline"><em>c</em></span> is the unique closest codeword to
+<span class="math inline"><em>w</em></span>. Let <span class="math inline"><em>ϕ</em>(<em>w</em>,<em>C</em>)</span> be the
+algorithm that first computes the distance between <span class="math inline"><em>w</em>, <em>c</em></span> for all <span class="math inline"><em>c</em> ∈ <em>C</em></span> and then returns the
+codeword that is closest to m. Since <span class="math inline"><em>c</em></span> is the closest codeword to <span class="math inline"><em>w</em></span>. The algorithm will always return
 <span class="math inline"><em>c</em></span>. ◻</p>
 </div>
 <div class="example">
 <p><strong>Example 3</strong>. We can apply these theorems on the
 k-repetition code, where k is some positive odd number. The minimum
-distance of the code is <span
-class="math inline"><em>d</em>(00...0,11...1) = <em>k</em></span>, which
-suggests that the code can detect up to <span
-class="math inline"><em>k</em> − 1</span> error bits and correct up to
+distance of the code is <span class="math inline"><em>d</em>(00...0,11...1) = <em>k</em></span>, which
+suggests that the code can detect up to <span class="math inline"><em>k</em> − 1</span> error bits and correct up to
 <span class="math inline">(<em>k</em>−1)/2</span> error bits.</p>
 </div>
 <h1 class="unnumbered" id="a-puzzle">A Puzzle</h1>
@@ -467,186 +525,115 @@ face the suuuuuuuuuper-generalized version of the Mars-Earth
 problem:</p>
 <div class="problem">
 <p><em>Problem 1</em>. Given a base q, a codeword length n, and a bound
-d such that <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>, what is
+d such that <span class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>, what is
 the maximum information rate we can obtain? How to construct the code
 that maximizes the information rate?</p>
 </div>
 <p>Since <span class="math inline"><em>q</em>, <em>n</em></span> is
-fixed, maximizing the <span
-class="math inline">$\frac{\log_q(|C|)}{n}$</span> is equivalent to
+fixed, maximizing the <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="7.043ex" height="3.373ex" role="img" focusable="false" viewBox="0 -1138 3113.1 1490.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(220,607.7) scale(0.707)"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mi" transform="translate(1311,-241.4) scale(0.707)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mo" transform="translate(1686.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mo" transform="translate(2075.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mi" transform="translate(2353.3,0)"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g><g data-mml-node="mo" transform="translate(3113.3,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mo" transform="translate(3391.3,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g><g data-mml-node="mi" transform="translate(1344.4,-345) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><rect width="2873.1" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span> is equivalent to
 maximizing <span class="math inline">|<em>C</em>|</span>, the size of
 the code. Thus, the problem can be reformulated as follows:</p>
 <div class="problem">
-<p><em>Problem 2</em>. Let <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+<p><em>Problem 2</em>. Let <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
 denote the maximum number of codewords in a q-ary code C of length n
-with minimum distance <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>. What is
-<span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
-and how to construct a code of size <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>?</p>
+with minimum distance <span class="math inline"><em>d</em>(<em>C</em>) ≥ <em>d</em></span>. What is
+<span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+and how to construct a code of size <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>?</p>
 </div>
-<p>This problem is still open today for tons of choices of <span
-class="math inline"><em>q</em>, <em>n</em>, <em>d</em></span>. However,
-the value of <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
+<p>This problem is still open today for tons of choices of <span class="math inline"><em>q</em>, <em>n</em>, <em>d</em></span>. However,
+the value of <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>
 can be determined by adding some constraints on its parameters:</p>
 <div class="theorem">
-<p><strong>Theorem 3</strong>. <em>If <span
-class="math inline"><em>d</em> = 1</span>, then <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em><sup><em>n</em></sup></span>.</em></p>
+<p><strong>Theorem 3</strong>. <em>If <span class="math inline"><em>d</em> = 1</span>, then <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em><sup><em>n</em></sup></span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> Since the distance between any two different codeword
 is at least 1, setting <span class="math inline"><em>d</em></span> to 1
 is equivalent to removing the constraint on the minimum distance of C.
-Thus, to reach the optimal, we can simply put all elements in <span
-class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> into C.
-As a result, we have <span
-class="math inline">|<em>C</em>| = |(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup>| = <em>q</em><sup><em>n</em></sup></span>. ◻</p>
+Thus, to reach the optimal, we can simply put all elements in <span class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> into C.
+As a result, we have <span class="math inline">|<em>C</em>| = |(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup>| = <em>q</em><sup><em>n</em></sup></span>. ◻</p>
 </div>
 <div class="theorem">
-<p><strong>Theorem 4</strong>. <em>If <span
-class="math inline"><em>n</em> = <em>d</em></span>, then <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>.</em></p>
+<p><strong>Theorem 4</strong>. <em>If <span class="math inline"><em>n</em> = <em>d</em></span>, then <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>.</em></p>
 </div>
 <div class="proof">
-<p><em>Proof.</em> Let C be the n-repetition code in base q: <span
-class="math display">$$\begin{aligned}
-\left\{\overbrace{000\ldots 0}^{n \textrm{ zeros}}, \overbrace{111\ldots
-1}^{n \textrm{ ones}}, \ldots \overbrace{q-1\ldots q-1}^{n
-(q-1)\textrm{th symbol}} \right\}.
-\end{aligned}$$</span> For any two distinct codewords <span
-class="math inline">$\overbrace{xxx\ldots x}^{n \textrm{
-x's}},\overbrace{yyy\ldots y}^{n \textrm{ y's}}$</span>, their distance
+<p><em>Proof.</em> Let C be the n-repetition code in base q: <span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -3.855ex;" xmlns="http://www.w3.org/2000/svg" width="38.835ex" height="8.842ex" role="img" focusable="false" viewBox="0 -2204.1 17164.9 3908.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr"><g data-mml-node="mtd"><g data-mml-node="mrow"><g data-mml-node="mo"><path data-c="23A7" d="M712 899L718 893V876V865Q718 854 704 846Q627 793 577 710T510 525Q510 524 509 521Q505 493 504 349Q504 345 504 334Q504 277 504 240Q504 -2 503 -4Q502 -8 494 -9T444 -10Q392 -10 390 -9Q387 -8 386 -5Q384 5 384 230Q384 262 384 312T383 382Q383 481 392 535T434 656Q510 806 664 892L677 899H712Z" transform="translate(0,1305.1)"></path><path data-c="23A9" d="M718 -893L712 -899H677L666 -893Q542 -825 468 -714T385 -476Q384 -466 384 -282Q384 3 385 5L389 9Q392 10 444 10Q486 10 494 9T503 4Q504 2 504 -239V-310V-366Q504 -470 508 -513T530 -609Q546 -657 569 -698T617 -767T661 -812T699 -843T717 -856T718 -876V-893Z" transform="translate(0,-805.1)"></path><path data-c="23A8" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 924Q504 691 503 682Q494 549 425 439T243 259L229 250L243 241Q349 175 421 66T503 -182Q504 -191 504 -424Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -425V-282Q384 -176 377 -116T342 10Q325 54 301 92T255 155T214 196T183 222T171 232Q170 233 170 250T171 268Q171 269 191 284T240 331T300 407T354 524T383 679Q384 691 384 925Q384 1152 385 1155L389 1159Z" transform="translate(0,0)"></path><svg width="889" height="335.1" y="1060" x="0" viewBox="0 59.1 889 335.1"><path data-c="23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z" transform="scale(1,1.648)"></path></svg><svg width="889" height="335.1" y="-895.1" x="0" viewBox="0 59.1 889 335.1"><path data-c="23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z" transform="scale(1,1.648)"></path></svg></g><g data-mml-node="mover" transform="translate(889,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="OP"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path></g><g data-mml-node="mo" transform="translate(1666.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mn" transform="translate(3005.3,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g><g data-mml-node="mo" transform="translate(0,971)"><path data-c="E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path data-c="E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z" transform="translate(3055.3,0)"></path><g data-c="E155" transform="translate(1302.7,0)"><path data-c="E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path data-c="E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z" transform="translate(450,0)"></path></g><svg width="1052.7" height="720" x="350" y="-300" viewBox="263.2 -300 1052.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.947,1)"></path></svg><svg width="1052.7" height="720" x="2102.7" y="-300" viewBox="263.2 -300 1052.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.947,1)"></path></svg></g></g></g><g data-mml-node="TeXAtom" transform="translate(683.5,1486) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mtext" transform="translate(600,0)"><path data-c="A0" d=""></path><path data-c="7A" d="M42 263Q44 270 48 345T53 423V431H393Q399 425 399 415Q399 403 398 402L381 378Q364 355 331 309T265 220L134 41L182 40H206Q254 40 283 46T331 77Q352 105 359 185L361 201Q361 202 381 202H401V196Q401 195 393 103T384 6V0H209L34 1L31 3Q28 8 28 17Q28 30 29 31T160 210T294 394H236Q169 393 152 388Q127 382 113 367Q89 344 82 264V255H42V263Z" transform="translate(250,0)"></path><path data-c="65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z" transform="translate(694,0)"></path><path data-c="72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z" transform="translate(1138,0)"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(1530,0)"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(2030,0)"></path></g></g></g><g data-mml-node="mo" transform="translate(4394.3,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mover" transform="translate(4839,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="OP"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1000,0)"></path></g><g data-mml-node="mo" transform="translate(1666.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mn" transform="translate(3005.3,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(0,971)"><path data-c="E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path data-c="E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z" transform="translate(3055.3,0)"></path><g data-c="E155" transform="translate(1302.7,0)"><path data-c="E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path data-c="E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z" transform="translate(450,0)"></path></g><svg width="1052.7" height="720" x="350" y="-300" viewBox="263.2 -300 1052.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.947,1)"></path></svg><svg width="1052.7" height="720" x="2102.7" y="-300" viewBox="263.2 -300 1052.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.947,1)"></path></svg></g></g></g><g data-mml-node="TeXAtom" transform="translate(782.5,1486) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mtext" transform="translate(600,0)"><path data-c="A0" d=""></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(250,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(750,0)"></path><path data-c="65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z" transform="translate(1306,0)"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(1750,0)"></path></g></g></g><g data-mml-node="mo" transform="translate(8344.3,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mo" transform="translate(8789,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mover" transform="translate(10127.7,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="OP"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mi"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(682.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(1682.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(2349.1,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mi" transform="translate(3687.8,0)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(4370,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(5370.2,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(0,971)"><path data-c="E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path data-c="E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z" transform="translate(5420.2,0)"></path><g data-c="E155" transform="translate(2485.1,0)"><path data-c="E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path data-c="E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z" transform="translate(450,0)"></path></g><svg width="2235.1" height="720" x="350" y="-300" viewBox="558.8 -300 2235.1 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(8.382,1)"></path></svg><svg width="2235.1" height="720" x="3285.1" y="-300" viewBox="558.8 -300 2235.1 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(8.382,1)"></path></svg></g></g></g><g data-mml-node="TeXAtom" transform="translate(318.8,1573.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(989,0)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(1449,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2227,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(2727,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mtext" transform="translate(3116,0)"><path data-c="74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path data-c="68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(389,0)"></path><path data-c="20" d="" transform="translate(945,0)"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(1195,0)"></path><path data-c="79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z" transform="translate(1589,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(2117,0)"></path><path data-c="62" d="M307 -11Q234 -11 168 55L158 37Q156 34 153 28T147 17T143 10L138 1L118 0H98V298Q98 599 97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V543Q179 391 180 391L183 394Q186 397 192 401T207 411T228 421T254 431T286 439T323 442Q401 442 461 379T522 216Q522 115 458 52T307 -11ZM182 98Q182 97 187 90T196 79T206 67T218 55T233 44T250 35T271 29T295 26Q330 26 363 46T412 113Q424 148 424 212Q424 287 412 323Q385 405 300 405Q270 405 239 390T188 347L182 339V98Z" transform="translate(2950,0)"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(3506,0)"></path><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z" transform="translate(4006,0)"></path></g></g></g><g data-mml-node="mo" transform="translate(15997.9,0)"><path data-c="23AB" d="M170 875Q170 892 172 895T189 899H194H211L222 893Q345 826 420 715T503 476Q504 467 504 230Q504 51 504 21T499 -9H498Q496 -10 444 -10Q402 -10 394 -9T385 -4Q384 -2 384 240V311V366Q384 469 380 513T358 609Q342 657 319 698T271 767T227 812T189 843T171 856T170 875Z" transform="translate(0,1305.1)"></path><path data-c="23AD" d="M384 -239V-57Q384 4 389 9Q391 10 455 10Q496 10 498 9Q501 8 502 5Q504 -5 504 -230Q504 -261 504 -311T505 -381Q505 -486 492 -551T435 -691Q357 -820 222 -893L211 -899H195Q176 -899 173 -896T170 -874Q170 -858 171 -855T184 -846Q262 -793 312 -709T378 -525Q378 -524 379 -522Q383 -493 384 -351Q384 -345 384 -334Q384 -276 384 -239Z" transform="translate(0,-805.1)"></path><path data-c="23AC" d="M389 1159Q391 1160 455 1160Q496 1160 498 1159Q501 1158 502 1155Q504 1145 504 925V782Q504 676 511 616T546 490Q563 446 587 408T633 345T674 304T705 278T717 268Q718 267 718 250T717 232Q717 231 697 216T648 169T588 93T534 -24T505 -179Q504 -191 504 -425Q504 -600 504 -629T499 -659H498Q496 -660 444 -660T390 -659Q387 -658 386 -655Q384 -645 384 -424Q384 -191 385 -182Q394 -49 463 61T645 241L659 250L645 259Q539 325 467 434T385 682Q384 692 384 873Q384 1153 385 1155L389 1159Z" transform="translate(0,0)"></path><svg width="889" height="335.1" y="1060" x="0" viewBox="0 59.1 889 335.1"><path data-c="23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z" transform="scale(1,1.648)"></path></svg><svg width="889" height="335.1" y="-895.1" x="0" viewBox="0 59.1 889 335.1"><path data-c="23AA" d="M384 150V266Q384 304 389 309Q391 310 455 310Q496 310 498 309Q502 308 503 298Q504 283 504 150Q504 32 504 12T499 -9H498Q496 -10 444 -10T390 -9Q386 -8 385 2Q384 17 384 150Z" transform="scale(1,1.648)"></path></svg></g></g><g data-mml-node="mo" transform="translate(16886.9,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g></g></g></g></g></g></svg></mjx-container></span> For any two distinct codewords <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="17.428ex" height="4.781ex" role="img" focusable="false" viewBox="0 -1908 7703.3 2113"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="TeXAtom" data-mjx-texclass="OP"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(572,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(1144,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1882.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mi" transform="translate(3221.3,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g><g data-mml-node="mo" transform="translate(0,747)"><path data-c="E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path data-c="E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z" transform="translate(3343.3,0)"></path><g data-c="E155" transform="translate(1446.7,0)"><path data-c="E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path data-c="E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z" transform="translate(450,0)"></path></g><svg width="1196.7" height="720" x="350" y="-300" viewBox="299.2 -300 1196.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(4.487,1)"></path></svg><svg width="1196.7" height="720" x="2246.7" y="-300" viewBox="299.2 -300 1196.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(4.487,1)"></path></svg></g></g></g><g data-mml-node="TeXAtom" transform="translate(1171.9,1262) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mtext" transform="translate(600,0)"><path data-c="A0" d=""></path><path data-c="78" d="M201 0Q189 3 102 3Q26 3 17 0H11V46H25Q48 47 67 52T96 61T121 78T139 96T160 122T180 150L226 210L168 288Q159 301 149 315T133 336T122 351T113 363T107 370T100 376T94 379T88 381T80 383Q74 383 44 385H16V431H23Q59 429 126 429Q219 429 229 431H237V385Q201 381 201 369Q201 367 211 353T239 315T268 274L272 270L297 304Q329 345 329 358Q329 364 327 369T322 376T317 380T310 384L307 385H302V431H309Q324 428 408 428Q487 428 493 431H499V385H492Q443 385 411 368Q394 360 377 341T312 257L296 236L358 151Q424 61 429 57T446 50Q464 46 499 46H516V0H510H502Q494 1 482 1T457 2T432 2T414 3Q403 3 377 3T327 1L304 0H295V46H298Q309 46 320 51T331 63Q331 65 291 120L250 175Q249 174 219 133T185 88Q181 83 181 74Q181 63 188 55T206 46Q208 46 208 23V0H201Z" transform="translate(250,0)"></path><path data-c="2019" d="M78 634Q78 659 95 676T138 694Q166 694 189 668T212 579Q212 525 190 476T146 403T118 379Q114 379 105 388T95 401Q95 404 107 417T133 448T161 500T176 572Q176 584 175 584T170 581T157 576T139 573Q114 573 96 590T78 634Z" transform="translate(778,0)"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(1056,0)"></path></g></g></g><g data-mml-node="mo" transform="translate(3793.3,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mover" transform="translate(4238,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="OP"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(490,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(980,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1636.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g><g data-mml-node="mi" transform="translate(2975.3,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(0,747)"><path data-c="E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path data-c="E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z" transform="translate(3015.3,0)"></path><g data-c="E155" transform="translate(1282.7,0)"><path data-c="E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path data-c="E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z" transform="translate(450,0)"></path></g><svg width="1032.7" height="720" x="350" y="-300" viewBox="258.2 -300 1032.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.872,1)"></path></svg><svg width="1032.7" height="720" x="2082.7" y="-300" viewBox="258.2 -300 1032.7 720"><path data-c="E154" d="M-10 0V120H410V0H-10Z" transform="scale(3.872,1)"></path></svg></g></g></g><g data-mml-node="TeXAtom" transform="translate(1007.9,1317.2) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mtext" transform="translate(600,0)"><path data-c="A0" d=""></path><path data-c="79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z" transform="translate(250,0)"></path><path data-c="2019" d="M78 634Q78 659 95 676T138 694Q166 694 189 668T212 579Q212 525 190 476T146 403T118 379Q114 379 105 388T95 401Q95 404 107 417T133 448T161 500T176 572Q176 584 175 584T170 581T157 576T139 573Q114 573 96 590T78 634Z" transform="translate(778,0)"></path><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z" transform="translate(1056,0)"></path></g></g></g></g></g></svg></mjx-container></span>, their distance
 is <span class="math inline"><em>n</em></span>, so the minimum distance
 of C is <span class="math inline"><em>n</em> = <em>d</em></span>. Hence,
 <span class="math inline">|<em>C</em>| = <em>q</em></span> is a lower
-bound for <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
+bound for <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
 Let <span class="math inline"><em>C</em>′</span> be a q-ary code of
-length n with <span
-class="math inline"><em>d</em>(<em>C</em>′) ≥ <em>n</em></span>. Since
-the maximum distance between any two words in <span
-class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> is n,
+length n with <span class="math inline"><em>d</em>(<em>C</em>′) ≥ <em>n</em></span>. Since
+the maximum distance between any two words in <span class="math inline">(ℤ/<em>q</em>ℤ)<sup><em>n</em></sup></span> is n,
 <span class="math inline"><em>d</em>(<em>C</em>) ≤ <em>n</em></span> and
-so <span
-class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>. Suppose
-<span class="math inline"><em>C</em>′</span> contains at least <span
-class="math inline"><em>q</em> + 1</span> codewords for contradiction.
+so <span class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>. Suppose
+<span class="math inline"><em>C</em>′</span> contains at least <span class="math inline"><em>q</em> + 1</span> codewords for contradiction.
 By the pigeonhole hole principle, there must be two codewords x,y in
 <span class="math inline"><em>C</em>′</span> that start with same
 symbol. Since x,y have length n and they start with the same symbol, the
-number of positions in which they differ is at most <span
-class="math inline"><em>n</em> − 1</span>, that is, <span
-class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ <em>n</em> − 1</span>,
-which contradicts that <span
-class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>.
+number of positions in which they differ is at most <span class="math inline"><em>n</em> − 1</span>, that is, <span class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ <em>n</em> − 1</span>,
+which contradicts that <span class="math inline"><em>d</em>(<em>C</em>′) = <em>n</em></span>.
 Therefore, <span class="math inline"><em>C</em>′</span> contains at most
-<span class="math inline"><em>q</em></span> elements and so <span
-class="math inline"><em>q</em></span> is an upper bound for <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
-We have shown that <span
-class="math inline"><em>q</em> ≤ <em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em></span>,
-so that <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>. ◻</p>
+<span class="math inline"><em>q</em></span> elements and so <span class="math inline"><em>q</em></span> is an upper bound for <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>)</span>.
+We have shown that <span class="math inline"><em>q</em> ≤ <em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em></span>,
+so that <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) = <em>q</em></span>. ◻</p>
 </div>
 <div class="theorem">
-<p><strong>Theorem 5</strong>. <em>If <span
-class="math inline"><em>n</em> = 4, <em>d</em> = 3</span>, then <span
-class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em><sup>2</sup></span>
+<p><strong>Theorem 5</strong>. <em>If <span class="math inline"><em>n</em> = 4, <em>d</em> = 3</span>, then <span class="math inline"><em>S</em>(<em>q</em>,<em>n</em>,<em>d</em>) ≤ <em>q</em><sup>2</sup></span>
 with equality if there exists a pair of orthogonal Latin squares of
 order q.</em></p>
 </div>
 <div class="proof">
-<p><em>Proof.</em> Let C be a q-ary code of length 4 with <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ 3</span>. Suppose, for
-contradiction, the size of C is at least <span
-class="math inline"><em>q</em><sup>2</sup> + 1</span>. Since <span
-class="math inline">3 ≤ <em>d</em>(<em>C</em>) ≤ <em>n</em> = 4</span>,
+<p><em>Proof.</em> Let C be a q-ary code of length 4 with <span class="math inline"><em>d</em>(<em>C</em>) ≥ 3</span>. Suppose, for
+contradiction, the size of C is at least <span class="math inline"><em>q</em><sup>2</sup> + 1</span>. Since <span class="math inline">3 ≤ <em>d</em>(<em>C</em>) ≤ <em>n</em> = 4</span>,
 <span class="math inline"><em>d</em>(<em>C</em>)</span> is either 3 or
 4. If <span class="math inline"><em>d</em>(<em>C</em>) = 4</span>, as
-shown before, its maximum possible size is <span
-class="math inline"><em>q</em> &lt; <em>q</em><sup>2</sup> + 1</span>.
+shown before, its maximum possible size is <span class="math inline"><em>q</em> &lt; <em>q</em><sup>2</sup> + 1</span>.
 Thus, <span class="math inline"><em>d</em>(<em>C</em>) = 3</span>. Since
-<span
-class="math inline">|<em>C</em>| ≥ <em>q</em><sup>2</sup> + 1</span>, by
-the pigeonhole principle, there exists two codewords <span
-class="math inline"><em>x</em>, <em>y</em> ∈ <em>C</em></span> whose
-first two digits are the same, so that <span
-class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ 2 &lt; 3 = <em>d</em>(<em>C</em>)</span>,
-which contradicts that <span
-class="math inline"><em>d</em>(<em>C</em>) ≤ <em>d</em>(<em>x</em>,<em>y</em>)</span>.
-Thus, the size of C is at most <span
-class="math inline"><em>q</em><sup>2</sup></span> and <span
-class="math inline"><em>S</em>(<em>q</em>,4,3) ≤ <em>q</em><sup>2</sup></span>.<br />
-Assume there exists a pair of orthogonal Latin squares <span
-class="math inline"><em>A</em>, <em>B</em></span> of order <span
-class="math inline"><em>q</em></span> over <span
-class="math inline">ℤ/<em>q</em>ℤ</span>. Let <span
-class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub>, <em>b</em><sub><em>i</em><em>j</em></sub></span>
-denote the (i,j)th entry of <span
-class="math inline"><em>A</em>, <em>B</em></span>respectively. We
+<span class="math inline">|<em>C</em>| ≥ <em>q</em><sup>2</sup> + 1</span>, by
+the pigeonhole principle, there exists two codewords <span class="math inline"><em>x</em>, <em>y</em> ∈ <em>C</em></span> whose
+first two digits are the same, so that <span class="math inline"><em>d</em>(<em>x</em>,<em>y</em>) ≤ 2 &lt; 3 = <em>d</em>(<em>C</em>)</span>,
+which contradicts that <span class="math inline"><em>d</em>(<em>C</em>) ≤ <em>d</em>(<em>x</em>,<em>y</em>)</span>.
+Thus, the size of C is at most <span class="math inline"><em>q</em><sup>2</sup></span> and <span class="math inline"><em>S</em>(<em>q</em>,4,3) ≤ <em>q</em><sup>2</sup></span>.<br>
+Assume there exists a pair of orthogonal Latin squares <span class="math inline"><em>A</em>, <em>B</em></span> of order <span class="math inline"><em>q</em></span> over <span class="math inline">ℤ/<em>q</em>ℤ</span>. Let <span class="math inline"><em>a</em><sub><em>i</em><em>j</em></sub>, <em>b</em><sub><em>i</em><em>j</em></sub></span>
+denote the (i,j)th entry of <span class="math inline"><em>A</em>, <em>B</em></span>respectively. We
 construct the code C as follows:</p>
-<p><span
-class="math display"><em>C</em> = {(<em>i</em>,<em>j</em>,<em>a</em><sub><em>i</em><em>j</em></sub>,<em>b</em><sub><em>i</em><em>j</em></sub>) : <em>i</em>, <em>j</em> ∈ ℤ/<em>q</em>ℤ}</span>.</p>
-<p>Pick any two different codewords <span
-class="math inline">(<em>s</em>,<em>t</em>,<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>)</span>
-and <span
-class="math inline">(<em>u</em>,<em>v</em>,<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>,
-we have <span
-class="math inline">(<em>s</em>,<em>t</em>) ≠ (<em>u</em>,<em>v</em>)</span>.
+<p><span class="math display"><em>C</em> = {(<em>i</em>,<em>j</em>,<em>a</em><sub><em>i</em><em>j</em></sub>,<em>b</em><sub><em>i</em><em>j</em></sub>) : <em>i</em>, <em>j</em> ∈ ℤ/<em>q</em>ℤ}</span>.</p>
+<p>Pick any two different codewords <span class="math inline">(<em>s</em>,<em>t</em>,<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>)</span>
+and <span class="math inline">(<em>u</em>,<em>v</em>,<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>,
+we have <span class="math inline">(<em>s</em>,<em>t</em>) ≠ (<em>u</em>,<em>v</em>)</span>.
 Since <span class="math inline"><em>A</em>, <em>B</em></span> are
-orthogonal, <span
-class="math inline">(<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>) ≠ (<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>.
+orthogonal, <span class="math inline">(<em>a</em><sub><em>s</em><em>t</em></sub>,<em>b</em><sub><em>s</em><em>t</em></sub>) ≠ (<em>a</em><sub><em>u</em><em>v</em></sub>,<em>b</em><sub><em>u</em><em>v</em></sub>)</span>.
 It follows that the minimum distance of C is at least 2. Suppose, for
 contradiction, the minimum distance of C equals 2. Then we have either
-<span
-class="math inline"><em>s</em> = <em>u</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
-or <span
-class="math inline"><em>s</em> = <em>u</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>,
-or <span
-class="math inline"><em>t</em> = <em>v</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
-or <span
-class="math inline"><em>t</em> = <em>v</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>.
-If the first case is true, then <span
-class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
-<span
-class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
+<span class="math inline"><em>s</em> = <em>u</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
+or <span class="math inline"><em>s</em> = <em>u</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>,
+or <span class="math inline"><em>t</em> = <em>v</em>, <em>a</em><sub><em>s</em><em>t</em></sub> = <em>a</em><sub><em>u</em><em>v</em></sub></span>,
+or <span class="math inline"><em>t</em> = <em>v</em>, <em>b</em><sub><em>s</em><em>t</em></sub> = <em>b</em><sub><em>u</em><em>v</em></sub></span>.
+If the first case is true, then <span class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
+<span class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
 equal and in the same row, which contradicts that A is a Latin square.
-If the second case is true, then <span
-class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
-<span
-class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
+If the second case is true, then <span class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
+<span class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
 equal and in the same row, which contradicts that B is a Latin square.
-If the third case is true, then <span
-class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
-<span
-class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
+If the third case is true, then <span class="math inline"><em>a</em><sub><em>s</em><em>t</em></sub></span> and
+<span class="math inline"><em>a</em><sub><em>u</em><em>v</em></sub></span> are
 equal and in the same column, which contradicts that A is a Latin
-square. If the last case is true, then <span
-class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
-<span
-class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
+square. If the last case is true, then <span class="math inline"><em>b</em><sub><em>s</em><em>t</em></sub></span> and
+<span class="math inline"><em>b</em><sub><em>u</em><em>v</em></sub></span> are
 equal and in the same column, which contradicts that B is a Latin
 square. Since all cases lead to contradiction, the minimum distance of C
-is at least 3, that is, <span
-class="math inline"><em>d</em>(<em>C</em>) ≥ 3 = <em>d</em></span>.
-Thus, C satisfies the minimum distance constraint. Because <span
-class="math inline">|<em>C</em>| = <em>q</em><sup>2</sup></span> reaches
-the upper bound for <span
-class="math inline"><em>S</em>(<em>q</em>,4,3)</span>, we conclude that
-<span
-class="math inline"><em>S</em>(<em>q</em>,4,3) = <em>q</em><sup>2</sup></span>. ◻</p>
+is at least 3, that is, <span class="math inline"><em>d</em>(<em>C</em>) ≥ 3 = <em>d</em></span>.
+Thus, C satisfies the minimum distance constraint. Because <span class="math inline">|<em>C</em>| = <em>q</em><sup>2</sup></span> reaches
+the upper bound for <span class="math inline"><em>S</em>(<em>q</em>,4,3)</span>, we conclude that
+<span class="math inline"><em>S</em>(<em>q</em>,4,3) = <em>q</em><sup>2</sup></span>. ◻</p>
 </div>
 <p>Although the result of <strong>Theorem 5</strong> is not interesting,
 the proof suggests some deep relationship between codes and Latin
 squares, and it is a good place to finish our tour.</p>
 <h1 class="unnumbered" id="reference">Reference</h1>
 <p>van, L. J. H., &amp;amp; Wilson, R. M. (2001). A course in
-Combinatorics. Cambridge University Press.<br />
+Combinatorics. Cambridge University Press.<br>
 Wikimedia Foundation. (2021, October 10). Code rate. Wikipedia.
 Retrieved March 18, 2022, from
 https://en.wikipedia.org/wiki/Code_rate</p>
