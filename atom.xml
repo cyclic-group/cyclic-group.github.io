@@ -6,7 +6,7 @@
   <link href="https://cyclic-group.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyclic-group.github.io/"/>
-  <updated>2023-11-22T15:53:52.086Z</updated>
+  <updated>2023-11-22T16:42:55.320Z</updated>
   <id>https://cyclic-group.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>升级软件不小心填满根文件系统导致系统崩溃的恢复</title>
+    <link href="https://cyclic-group.github.io/2023/11/23/system-crash-recovery-full-root-filesystem/"/>
+    <id>https://cyclic-group.github.io/2023/11/23/system-crash-recovery-full-root-filesystem/</id>
+    <published>2023-11-23T03:41:23.000Z</published>
+    <updated>2023-11-22T16:42:55.320Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>升级软件<code>sudo apt update &amp;&amp; sudo apt full-upgrade &amp;&amp; sudo apt autoclean</code>时根文件系统空间被占满，程序和系统都无法正常运行。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol><li>进入修复模式，如果root账户被锁了先去解锁</li></ol><ul><li>解锁root - 启动菜单按e修改grub，根目录文件系统的挂载访问权限改成<code>rw</code>，后面加上<code>init=/bin/zsh</code>。进入shell后<code>passwd; passwd -u root</code>，恢复完成后记得<code>passwd -l root</code></li></ul><ol start="2"><li>将根文件系统空出一部分，比如可以将<code>/opt</code>下面的一些大文件搬到其他文件系统里或者直接删掉，这一步是确保其他程序能够正常运行，移动文件前别忘了先挂载其他文件系统</li><li>使用<code>vgresize</code>和<code>resize2fs</code>重新分配空间，必要时通过<code>fsck</code>来恢复损坏的文件系统</li><li>这时候就可以正常登录了，但登录后可能会出现一个图形界面说系统无法恢复让联系管理员，这是因为之前更新被打断仓库里的程序有损坏，进行修复<code>apt-get --fix-broken</code>然后完成之前的更新<code>apt full-upgrade</code></li><li>重新启动，应该好了</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://cyclic-group.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Square CTF 2023 Writeup</title>

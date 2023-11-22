@@ -10,7 +10,7 @@
     
     <title>
         
-            归档: 2023/11 |
+            升级软件不小心填满根文件系统导致系统崩溃的恢复 |
         
         0x88dfac8bedc5的微型次元城
     </title>
@@ -93,7 +93,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -135,7 +135,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -161,49 +161,191 @@
                 
 
                     <div class="fade-in-down-animation">
-    <div class="archives-container">
-        <div class="archives-timeline border-box">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
             
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2023</span>
-            </div>
-            <ul class="article-list border-box">
+
+            <div class="article-content-bottom border-box">
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">11-23</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/11/23/system-crash-recovery-full-root-filesystem/"
-                        >升级软件不小心填满根文件系统导致系统崩溃的恢复</a>
-                    </li>
+                    <div class="article-title">
+                        升级软件不小心填满根文件系统导致系统崩溃的恢复
+                    </div>
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">11-18</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/11/18/square-ctf-2023-writeup/"
-                        >Square CTF 2023 Writeup</a>
-                    </li>
+
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">11-10</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2023/11/10/tsg-ctf-2023-writeup/"
-                        >TSG CTF 2023 Writeup</a>
-                    </li>
-                
-            </ul>
-        </section>
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat-avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">0x88dfac8bedc5</span>
+                                
+                                    <span class="author-label">Lv2</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-11-23 11:41:23</span>
+                <span class="mobile">2023-11-23 11:41</span>
+            </span>
+
+            <!-- <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Thu Nov 23 2023 00:42:55 GMT+0800">2023-11-23 00:42:55</span>
+            </span> -->
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/linux/">linux</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>升级软件<code>sudo apt update &amp;&amp; sudo apt full-upgrade &amp;&amp; sudo apt autoclean</code>时根文件系统空间被占满，程序和系统都无法正常运行。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>进入修复模式，如果root账户被锁了先去解锁</li>
+</ol>
+<ul>
+<li>解锁root - 启动菜单按e修改grub，根目录文件系统的挂载访问权限改成<code>rw</code>，后面加上<code>init=/bin/zsh</code>。进入shell后<code>passwd; passwd -u root</code>，恢复完成后记得<code>passwd -l root</code></li>
+</ul>
+<ol start="2">
+<li>将根文件系统空出一部分，比如可以将<code>/opt</code>下面的一些大文件搬到其他文件系统里或者直接删掉，这一步是确保其他程序能够正常运行，移动文件前别忘了先挂载其他文件系统</li>
+<li>使用<code>vgresize</code>和<code>resize2fs</code>重新分配空间，必要时通过<code>fsck</code>来恢复损坏的文件系统</li>
+<li>这时候就可以正常登录了，但登录后可能会出现一个图形界面说系统无法恢复让联系管理员，这是因为之前更新被打断仓库里的程序有损坏，进行修复<code>apt-get --fix-broken</code>然后完成之前的更新<code>apt full-upgrade</code></li>
+<li>重新启动，应该好了</li>
+</ol>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/linux/">linux</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/11/18/square-ctf-2023-writeup/"
+                                   title="Square CTF 2023 Writeup"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Square CTF 2023 Writeup</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
         </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol>
     </div>
-    
+</div>
 
-
-
+            </div>
+        
+    </div>
 </div>
 
 
@@ -248,6 +390,23 @@
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -283,6 +442,10 @@
     </ul>
 
     <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
         
 
         
@@ -340,6 +503,17 @@
 
     <!-- tablet toc -->
     
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
 </main>
 
 
@@ -361,6 +535,22 @@
 
 
 <div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/share.js"></script>
+        
     
 
     <!-- category-page -->
