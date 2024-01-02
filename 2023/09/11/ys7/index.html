@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="0xe598bfe598bfe598bf">
+    <meta name="description" content="0xe598bfe598bfe598bf的次元城">
+    <meta name="author" content="0x88dfac8bedc5">
+    
+    <title>
+        
+            持久学习（一） |
+        
+        0x88dfac8bedc5的微型次元城
+    </title><meta name="robots" content="noindex">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/dark-magic-house.png">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"cyclic-group.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/cat-avatar.jpg","favicon":"/images/dark-magic-house.png","avatar":"/images/cat-avatar.jpg","first_screen":{"enable":true,"background_img":"../images/bg.svg","description":"e4 bd a0 e5 a5 bd e5 91 80 e5 98 bf e5 98 bf e5 98 bf ef bd 9e","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQRLNHYY1E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQRLNHYY1E');
+    </script>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/cat-avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               0x88dfac8bedc5的微型次元城
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        持久学习（一）
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat-avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">0x88dfac8bedc5</span>
+                                
+                                    <span class="author-label">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-09-11 14:21:45</span>
+                <span class="mobile">2023-09-11 14:21</span>
+            </span>
+
+            <!-- <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Jan 03 2024 05:19:24 GMT+0800">2024-01-03 05:19:24</span>
+            </span> -->
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/med/">med</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <p>随着人类知识量的恐怖增长以及信息技术的成熟，能否高效持久地获取知识将成为个体成长的瓶颈。本篇从大脑的运作原理出发对目前盛行的学习技巧进行考察和解释。</p>
+<h1 id="人的自然遗忘速度"><a href="#人的自然遗忘速度" class="headerlink" title="人的自然遗忘速度"></a>人的自然遗忘速度</h1><p>根据艾宾浩斯遗忘曲线[^1]，人在初步学习后的一周内能遗忘大概75%的所学，假设在初次学习后不进行相关活动。把未遗忘的比例看成一个在时间上的函数，那么在最初的一周该函数呈现出了陡峭的下降趋势，并在周末尾跌至25%。</p>
+<h1 id="检索练习"><a href="#检索练习" class="headerlink" title="检索练习"></a>检索练习</h1><p>检索练习，也就是从记忆中回忆概念、事实、时间、或某个步骤，被认为是能够让遗忘曲线变得平缓的策略。无论检索是否成功，被检索的那部分记忆都会得到加强，从而能够更久的保存以及在下一次检索时更容易成功（很显然不是立刻生效，所谓的“加强”本质上是负责这部分记忆的神经元链接变得更加强健，这些过程会在后文中被更仔细的考察）。</p>
+<h1 id="人类知识量的恐怖增长"><a href="#人类知识量的恐怖增长" class="headerlink" title="人类知识量的恐怖增长"></a>人类知识量的恐怖增长</h1><p>拿医学来举例。根据2020年的一项研究[^2]，医学知识量每10周一次翻倍，呈指数型增长。</p>
+<h1 id="知识的层级结构"><a href="#知识的层级结构" class="headerlink" title="知识的层级结构"></a>知识的层级结构</h1><p>虽然现代人被期望掌握的知识量和前人已不是一个量级，但由于知识的层级结构以及检索效应，实际上掌握大量的知识并不是十分困难。一些知识构建在另一些知识之上，比如量子物理依赖于希尔伯特空间的知识，希尔伯特空间又依赖于向量空间的知识（也就是线性代数），而线性代数又依赖于逻辑学，基本的四则运算等基础知识。类似的知识链随处可见。当上层知识在被学习时，其依赖的那部分也在不断地被检索从而强化；反过来说，很少被检索调用的知识会被大脑当作垃圾给清理掉。</p>
+<h1 id="回顾一下神经元"><a href="#回顾一下神经元" class="headerlink" title="回顾一下神经元"></a>回顾一下神经元</h1><p>大脑拥有大约$86 \times 10^9$神经元，这些细胞是构成记忆系统的基本单元。相比于其他类型的细胞，神经元之间能够互相链接，形成一条条电路从而传递或储存生物信息。记忆的变化在微观上的表现为创建新链接，取消旧链接，一些链接得到加强变得更坚固，一些链接随着时间变得更加脆弱。值得留意的是在这个过程中变化的只有神经元之间的链接，神经元的数量是基本不变的。</p>
+<h2 id="神经元的结构"><a href="#神经元的结构" class="headerlink" title="神经元的结构"></a>神经元的结构</h2><p>神经元长得很像一颗没有叶子的树。中间长长的一条叫做轴突(axon)，用于传导电信号；轴突末端，也就是较小的一侧，能够根据电信号释放相应的神经递质到与其链接的神经元。另一侧，也就是躯干部分，装载着细胞核。两侧都有歪歪扭扭的树枝，被称为树突(dendrites)，每个树突上有密密麻麻的小尖尖，被叫做棘突(dendritic spines)。当一个神经元想要链接另一个神经元时，它头部的一个棘突便会慢慢凑到另一个神经元轴突末端上的某个棘突上，两者相逢时构成一种叫做突触的结构（突触建立后，神经递质便能在这两个神经元间传递了，尽管是单向的）。</p>
+<p>[^1]: Thalheimer, W. (2006). The Ebbinghaus Forgetting Curve and Its Implications. Work-Learning Research. Retrieved from <a class="link"   target="_blank" rel="noopener" href="https://www.worklearning.com/wp-content/uploads/2017/10/The-Ebbinghaus-Forgetting-Curve-and-Its-Implications.pdf" >https://www.worklearning.com/wp-content/uploads/2017/10/The-Ebbinghaus-Forgetting-Curve-and-Its-Implications.pdf<i class="fas fa-external-link-alt"></i></a></p>
+<p>[^2]: Walsh, K. (2020). How Much Information Is Created, Replicated, and Archived in Healthcare Every Year? Journal of the Royal Society of Medicine Open, 11(7), 1-5. doi: 10.1177&#x2F;2054270419889559.</p>
+<p><img src="/images/med/learning1.png"><br><img src="/images/med/learning2.png"><br><img src="/images/med/learning3.png"></p>
+<!-- flag of hidden posts -->
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/med/">med</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%9A%84%E8%87%AA%E7%84%B6%E9%81%97%E5%BF%98%E9%80%9F%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">人的自然遗忘速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E7%B4%A2%E7%BB%83%E4%B9%A0"><span class="nav-number">2.</span> <span class="nav-text">检索练习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%B1%BB%E7%9F%A5%E8%AF%86%E9%87%8F%E7%9A%84%E6%81%90%E6%80%96%E5%A2%9E%E9%95%BF"><span class="nav-number">3.</span> <span class="nav-text">人类知识量的恐怖增长</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">知识的层级结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E4%B8%80%E4%B8%8B%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="nav-number">5.</span> <span class="nav-text">回顾一下神经元</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">神经元的结构</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">0x88dfac8bedc5</a>
+                
+            </div>
+
+            <!-- <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div> -->
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%9A%84%E8%87%AA%E7%84%B6%E9%81%97%E5%BF%98%E9%80%9F%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">人的自然遗忘速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A3%80%E7%B4%A2%E7%BB%83%E4%B9%A0"><span class="nav-number">2.</span> <span class="nav-text">检索练习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E7%B1%BB%E7%9F%A5%E8%AF%86%E9%87%8F%E7%9A%84%E6%81%90%E6%80%96%E5%A2%9E%E9%95%BF"><span class="nav-number">3.</span> <span class="nav-text">人类知识量的恐怖增长</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">知识的层级结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E4%B8%80%E4%B8%8B%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="nav-number">5.</span> <span class="nav-text">回顾一下神经元</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">神经元的结构</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+<script src="/js/long-press-event.js" defer></script>
+<script defer>
+    const bgm = document.createElement("audio");
+    bgm.id = "bgm";
+    bgm.src = "/audios/bgm-1.mp3";
+    bgm.controls = false;
+    bgm.autoplay = false; 
+    bgm.style.display = "none";
+    bgm.loop = "loop";
+    document.body.appendChild(bgm);
+
+    window.onload = function() {
+        const widget = document.querySelector("#live2d-widget");
+        widget.style.pointerEvents = "auto";
+        widget.style.cursor = "url('/images/clef.png') 20 20, auto";
+        widget.addEventListener("mousedown", () => {
+            const audio_list = ["https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/upclzsolxj/01.%20Praise%20the%20Lamb.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/lbccbknyve/05.%20Faith%20Up.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/biuzbjcrtj/07.%20Saviour.mp3", 
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/rxoopwecuw/08.%20Darkwood.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/mwplkyfcej/10.%20Leshy.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/pyrxysussx/11.%20Knucklebones.mp3",
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/bmshkiptnt/16.%20Heket.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/shfpubazuq/26.%20Shamura.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/cjseknykhh/35.%20The%20One%20Who%20Waits.mp3"];
+            bgm.src = audio_list[Math.floor(Math.random() * audio_list.length)];
+            bgm.play();
+            return false;
+        });
+        widget.addEventListener("long-press", () => {
+            bgm.pause();
+            return false;
+        });
+    };
+   
+</script>
+</body>
+</html>

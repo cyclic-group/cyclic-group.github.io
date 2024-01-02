@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="0xe598bfe598bfe598bf">
+    <meta name="description" content="0xe598bfe598bfe598bf的次元城">
+    <meta name="author" content="0x88dfac8bedc5">
+    
+    <title>
+        
+            持久学习（二） |
+        
+        0x88dfac8bedc5的微型次元城
+    </title><meta name="robots" content="noindex">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/dark-magic-house.png">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"cyclic-group.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/cat-avatar.jpg","favicon":"/images/dark-magic-house.png","avatar":"/images/cat-avatar.jpg","first_screen":{"enable":true,"background_img":"../images/bg.svg","description":"e4 bd a0 e5 a5 bd e5 91 80 e5 98 bf e5 98 bf e5 98 bf ef bd 9e","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="0xe598bfe598bfe598bf的次元城" type="application/atom+xml">
+</head>
+
+
+<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQRLNHYY1E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YQRLNHYY1E');
+    </script>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/cat-avatar.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               0x88dfac8bedc5的微型次元城
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        持久学习（二）
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat-avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">0x88dfac8bedc5</span>
+                                
+                                    <span class="author-label">Lv3</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-06-29 19:34:25</span>
+                <span class="mobile">2023-06-29 19:34</span>
+            </span>
+
+            <!-- <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Jan 03 2024 05:19:24 GMT+0800">2024-01-03 05:19:24</span>
+            </span> -->
+        
+
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/med/">med</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <p>学习是对知识、技能、行为的获取过程。当某项东西被习得时，大脑记忆区域里的某些神经元相互进行物理链接，表示这部分知识、技能或行为。链接的强度（体现在放电的一致性）决定了习得物的牢固程度。大脑将强度弱的链接视为“不重要的信息”，并且会周期性得清除这些链接，形成遗忘的现象[1]。笔者认为遗忘机制是为了防止记忆充斥着大量冗余无用的信息，是一种保护机制。牢固的习得物不仅不容易被遗忘机制清除掉，在之后调用的时候也会更为快捷。频繁、有间隔的检索被认为是增加链接强度的有效手段之一。</p>
+<h1 id="两条路径"><a href="#两条路径" class="headerlink" title="两条路径"></a>两条路径</h1><p>这里对知识和技能进行一个区分。通常来说，知识的习得是更需要意识参与的，是容易向别人解释的。比如熟知人体的解剖学结构，用某些理论解释世界上的某种现象。技能的习得更倾向于无意识的，需要靠不断的练习巩固的。技能通常用于解决具有复杂模式的现实问题，面临的细节很多，解释不清，只能通过实践来掌握。一般而言，知识的习得不依赖于技能，而某些技能的习得需要具备某方便的知识。 很显然，知识相关的链路能通过不断向别人解释来增强，技能相关的链路能通过不断练习加强。从记忆中提取技能一般比知识更为迅速。</p>
+<p>可能是由于两者不同的性质，知识和技能信息通过不同的神经路径到达记忆。前者通过的路径被称为陈述式学习路径 – 信息通过五感被整合在位于前额叶的工作记忆（短期记忆），接着流入只能短暂保存信息的海马体，最后流入位于新皮层的记忆系统（长期记忆）。后者通过的路径被称为程序式学习路径，信息不经过海马体而是基底神经节从而进入长期记忆。</p>
+<h1 id="两种模式"><a href="#两种模式" class="headerlink" title="两种模式"></a>两种模式</h1><p>神经链接的形成方式根据模式可分为两种。第一种需要注意力的集中，可以叫做集中模式，第二种需要注意力的不集中，叫做发散模式。比如睡觉的时候处于发散模式（好吧我不确定清醒梦属于哪种情况），工作学习的时候处于集中模式，上班摸鱼的时候其实也是集中模式，只不过集中到了别的地方，刷手机也是集中模式。很显然，喜欢在休息时间刷手机的现代人其实大块时间处于集中模式，这对记忆的稳固是不太好的。</p>
+<p>当处于集中模式下时，信息会从工作记忆（处理和整合五感信号以及提取记忆的地方）流向海马体，但此时海马体由于在和工作记忆交互无暇理会长期记忆，只有很少的一部分信息进入长期记忆。由于海马体只能在短暂时间内记住有限的信息，所以长期处于集中状态并不是上策。</p>
+<p>发散状态下海马体就可以和长期记忆沟通了，此时工作记忆不再给海马体增加负担，信息开始从海马体缓慢的流向长期记忆，从而形成或加强记忆神经链接。这个过程被称为记忆的巩固。睡眠时间占据一大部分发散时间，所以说睡好觉是能帮助巩固记忆的。</p>
+<p>这部分理论衍生出了…</p>
+<h1 id="番茄钟工作法"><a href="#番茄钟工作法" class="headerlink" title="番茄钟工作法"></a>番茄钟工作法</h1><p>该方法使用一个定时器来分割25分钟的工作时间（集中状态）和5分钟的休息时间（发散状态），形成一个周期。每四个周期后休息15-30分钟（发散）。休息时不能让自己回到集中状态（比如刷手机）。这一技术的目的在于交替集中和发散模式来进行有效输入。 </p>
+<h1 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h1><p>人在运动时，大脑会产生一种叫做脑源性神经营养因子（BDNF）的化学物质[2]。BDNF能让记忆神经元上长出更多的棘突（两个神经元的棘突互相靠近形成突触结构从而构成链接），这让链接的形成更加容易从而促进记忆的形成和稳固。</p>
+<h1 id="“天才”"><a href="#“天才”" class="headerlink" title="“天才”"></a>“天才”</h1><p>研究发现[3]有一些人类生来可以快速建立神经链接，表现出了出众的学习能力。这个强大的加持也伴随着一些副作用。比如当错误的概念被习得后再进行纠错会比普通人更为困难。也就说，对于神经链接的调整能力变低了。</p>
+<p>[1]: Cotman, C. W., &amp; Berchtold, N. C. (2007). Exercise-induced neurogenesis in the hippocampus via BDNF. Brain Research.</p>
+<p>[2]: Vaynman, S., Ying, Z., and Gomez-Pinilla, F. “The exercise-induced expression of BDNF within the hippocampus varies across life-span.” Neurobiology of Aging, vol. 25, no. 5, 2004, pp. 647-54. </p>
+<p>[3]: Kuhl, B. A., Rissman, J., Chun, M. M., &amp; Wagner, A. D. (2011). Stability of neural representations during cognitive flexibility. Neuron, 59(4), 534-545.</p>
+<p><img src="/images/med/learning4.png"><br><img src="/images/med/learning5.png"><br><img src="/images/med/learning6.png"></p>
+<!-- flag of hidden posts -->
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/med/">med</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%9D%A1%E8%B7%AF%E5%BE%84"><span class="nav-number">1.</span> <span class="nav-text">两条路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">两种模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%95%AA%E8%8C%84%E9%92%9F%E5%B7%A5%E4%BD%9C%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">番茄钟工作法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">运动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9C%E5%A4%A9%E6%89%8D%E2%80%9D"><span class="nav-number">5.</span> <span class="nav-text">“天才”</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">0x88dfac8bedc5</a>
+                
+            </div>
+
+            <!-- <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div> -->
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E6%9D%A1%E8%B7%AF%E5%BE%84"><span class="nav-number">1.</span> <span class="nav-text">两条路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">两种模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%95%AA%E8%8C%84%E9%92%9F%E5%B7%A5%E4%BD%9C%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">番茄钟工作法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8"><span class="nav-number">4.</span> <span class="nav-text">运动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%9C%E5%A4%A9%E6%89%8D%E2%80%9D"><span class="nav-number">5.</span> <span class="nav-text">“天才”</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/local-search.js"></script>
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/share.js"></script>
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+<script src="/js/long-press-event.js" defer></script>
+<script defer>
+    const bgm = document.createElement("audio");
+    bgm.id = "bgm";
+    bgm.src = "/audios/bgm-1.mp3";
+    bgm.controls = false;
+    bgm.autoplay = false; 
+    bgm.style.display = "none";
+    bgm.loop = "loop";
+    document.body.appendChild(bgm);
+
+    window.onload = function() {
+        const widget = document.querySelector("#live2d-widget");
+        widget.style.pointerEvents = "auto";
+        widget.style.cursor = "url('/images/clef.png') 20 20, auto";
+        widget.addEventListener("mousedown", () => {
+            const audio_list = ["https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/upclzsolxj/01.%20Praise%20the%20Lamb.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/lbccbknyve/05.%20Faith%20Up.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/biuzbjcrtj/07.%20Saviour.mp3", 
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/rxoopwecuw/08.%20Darkwood.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/mwplkyfcej/10.%20Leshy.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/pyrxysussx/11.%20Knucklebones.mp3",
+            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/bmshkiptnt/16.%20Heket.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/shfpubazuq/26.%20Shamura.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/cjseknykhh/35.%20The%20One%20Who%20Waits.mp3"];
+            bgm.src = audio_list[Math.floor(Math.random() * audio_list.length)];
+            bgm.play();
+            return false;
+        });
+        widget.addEventListener("long-press", () => {
+            bgm.pause();
+            return false;
+        });
+    };
+   
+</script>
+</body>
+</html>
