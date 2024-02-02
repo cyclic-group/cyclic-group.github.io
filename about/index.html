@@ -10,7 +10,7 @@
     
     <title>
         
-            TEST |
+            关于 |
         
         0x88dfac8bedc5的微型次元城
     </title>
@@ -109,7 +109,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/about"
                             >
                                 关于
@@ -153,7 +153,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/about">关于</a>
                 </li>
             
@@ -179,7 +179,24 @@
         
         <div class="page-template-content border-box keep-markdown-body">
             
-                
+                <p><span id="visitor-count">loading…</span></p>
+<script defer>
+    fetch("https://9pcez0rayh.execute-api.ap-east-1.amazonaws.com/Production", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            "operation": "get_count",
+            "payload": {
+                "domain_name": "dimension-city.cyclicgroup.xyz"
+            }
+        })
+    }).then(response => response.json()).then(count => 
+        document.querySelector("#visitor-count").textContent = count
+    );
+</script>
             
         </div>
         
