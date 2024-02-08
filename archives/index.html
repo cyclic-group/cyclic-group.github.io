@@ -483,34 +483,6 @@
 
 
 <script src="/js/long-press-event.js" defer></script>
-<script defer>
-    const bgm = document.createElement("audio");
-    bgm.id = "bgm";
-    bgm.src = "/audios/bgm-1.mp3";
-    bgm.controls = false;
-    bgm.autoplay = false; 
-    bgm.style.display = "none";
-    bgm.loop = "loop";
-    document.body.appendChild(bgm);
-
-    window.onload = function() {
-        const widget = document.querySelector("#live2d-widget");
-        widget.style.pointerEvents = "auto";
-        widget.style.cursor = "url('/images/clef.png') 20 20, auto";
-        widget.addEventListener("mousedown", () => {
-            const audio_list = ["https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/upclzsolxj/01.%20Praise%20the%20Lamb.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/lbccbknyve/05.%20Faith%20Up.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/biuzbjcrtj/07.%20Saviour.mp3", 
-            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/rxoopwecuw/08.%20Darkwood.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/mwplkyfcej/10.%20Leshy.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/pyrxysussx/11.%20Knucklebones.mp3",
-            "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/bmshkiptnt/16.%20Heket.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/shfpubazuq/26.%20Shamura.mp3", "https://vgmsite.com/soundtracks/cult-of-the-lamb-original-soundtrack-2022/cjseknykhh/35.%20The%20One%20Who%20Waits.mp3"];
-            bgm.src = audio_list[Math.floor(Math.random() * audio_list.length)];
-            bgm.play();
-            return false;
-        });
-        widget.addEventListener("long-press", () => {
-            bgm.pause();
-            return false;
-        });
-    };
-   
-</script>
+<script src="/js/bgm.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json"},"log":false});</script></body>
 </html>
